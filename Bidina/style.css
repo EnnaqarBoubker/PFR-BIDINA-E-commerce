@@ -1,0 +1,21 @@
+.humber{
+    background: rgb(205, 200, 200);
+    width: 35px;
+    height: 35px;
+}
+.humber > .toggle{
+    background: red;
+    width: 100%;
+    height: 4px;
+    position: relative;
+    top: 15px;
+}
+.humber > .toggle::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    top: 10px;
+    background: red;
+
+}
