@@ -29,9 +29,9 @@
             </div>
         </div>
         <nav class="navbar navbar-expand-lg navbar-light ">
-            <div class="row row-cols-lg-2 justify-content-between align-items-center m-0 w-100">
+            <div class="row row-cols-lg-2 justify-content-around align-items-center m-0 w-100">
                 <div class="col">
-                    <a class="img " href="#">
+                    <a class="img " href="./index.html">
                         <img class=" image py-3" src="./image-2/logo11.png" alt="logo bidina"></a>
                 </div>
                 <div class="col item-A">
@@ -54,12 +54,21 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="btn border-0 " type="button">
-                            <i class="fas fa-user px-2"></i>
-                        </button>
+                        
+                        <div class="fs-6 user_button nav-item btn border-0"><i class="fas fa-user px-2"></i>
+                            <div class="bg-user-down navbar-a p-3 ">
+                                <ul class=" user_down  list-unstyled">
+                                    <li><a class="dropdown-item px-2 py-2 user-item" href="./signin.html">Sign In</a></li>
+                                    <li><a class="dropdown-item px-2 py-2 user-item" href="./signup.html">Sign Up</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+
                         <button class="btn border-0 position-relative" type="button">
                             <i class="fas fa-shopping-cart px-2"></i>
-                            <span class="position-absolute top-0  translate-middle badge rounded-pill">1</span>
+                            <span class="position-absolute top-0 translate-middle badge rounded-pill">1</span>
                         </button>
                     </div>
                 </div>
@@ -78,21 +87,21 @@
                         <div class="col p-lg-0 w-100">
                             <ul
                                 class="items p-3 d-flex align-lg-items-center justify-content-start justify-content-lg-center flex-column flex-lg-row list-unstyled ">
-                                <li class="item"><a href="#" class="nav-item nav-link active list-inline text-light">Home</a></li>
-                                <li class="item"><a href="#" class="nav-item nav-link  text-light">About Us</a></li>
+                                <li class="item"><a href="#" class="nav-item nav-link navbar-a  list-inline text-light">Home</a></li>
+                                <li class="item"><a href="#" class="nav-item nav-link navbar-a  text-light">About Us</a></li>
                                 <li class="item nav-item dropdown ">
-                                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                                    <div class="dropdown-menu dropdown-menu-dark ">
-                                        <ul class="d-block ">
-                                            <li class="title"><a class="dropdown-item" href="#">Shop Page</a></li>
-                                            <li><a class="dropdown-item" href="#">Shop 3 Column</a></li>
-                                            <li><a class="dropdown-item" href="#">Shop 4 Column</a></li>
-                                            <li><a class="dropdown-item" href="#">Shop Left Sidebar</a></li>
+                                <div class="fs-6 shop_button nav-item">Shop <i class="fas fa-angle-down ps-2 fs-5" style="top: 10px;"></i>
+                                    <div class="bg-shop-down navbar-a p-3 ">
+                                        <ul class=" shop_down  list-unstyled">
+                                            <li><a class="dropdown-item px-2 py-2 shop-item" href="#">Shop 3 Column</a></li>
+                                            <li><a class="dropdown-item px-2 py-2 shop-item" href="#">Shop 4 Column</a></li>
+                                            <li><a class="dropdown-item px-2 py-2 shop-item" href="#">Shop Left Sidebar</a></li>
                                         </ul>
                                     </div>
+                                </div>
                                 </li>
-                                <li class="item"><a href="#" class="nav-item nav-link  text-light">Blogs</a></li>
-                                <li> <a href="#" class="nav-item nav-link  text-light">Contact Us</a></li>
+                                <li class="item"><a href="#" class="nav-item nav-link navbar-a  text-light">Blogs</a></li>
+                                <li> <a href="#" class="nav-item nav-link navbar-a  text-light">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -100,6 +109,7 @@
             </div>
         </nav>
     </header>
+
     <main>
         <div class="container-fluid p-0 text-center">
             <div class="signin container-fluid">

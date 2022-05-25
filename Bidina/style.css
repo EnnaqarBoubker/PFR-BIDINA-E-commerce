@@ -310,6 +310,15 @@ button.btn.btn-secondary.batn a:hover{
     }
     
    
+    .shop_down{
+        width: 400% !important;
+    }
+    .shop_button{
+        position: relative;
+        color: #f4f5f8 !important;
+        top: 10px;
+        
+    }
 
 }
 
@@ -527,7 +536,7 @@ li.list-a {
     font-size: 14px;
 }
 .signin{
-    background: rgb(244, 245, 248);
+    background: rgb(231, 231, 231);
     padding: 80px 0;
 }
 li.list-a a {
@@ -590,24 +599,64 @@ li.list-a a:hover {
 
 .shop_button{
     position: relative;
-    color: #f4f5f8;
+    color: #000000;
     top: 10px;
+    left: 15px; 
+}
+.shop_button:hover{
+     color: #ee870d !important;
 }
 .shop_down{
     display: none;
     position: absolute;
     top: 90%;
     left: 0;
-    transition: all .5s;
+    width: 100%; 
 }
 
 .shop_button:hover .shop_down{
     display: block;
-    color: white;
-    background-color: #000;
-    transition: all .6s ease;
+    background-color: #f4f5f8;
+    box-shadow: rgba(0, 0, 0, 0.171) 0px 0px 12px 3px !important;
+    transition: all 4s ease-in-out; 
+}
+.shop-item,
+.user-item{
+    color: #000;
+    border-bottom: 2px solid rgba(239, 215, 215, 0.525);
+    width: 100%;
+    margin: 0 auto;
+}
+.shop-item:hover,
+.user-item:hover{
+    color: #ee870d !important;
+    background-color: white !important;
 }
 
-.bg-shop-down{
-   
+
+/* user$$$$$$$$$$$$$$$$$ */
+.user_button{
+    position: relative;
+    color: #ee870d;
+    top: 16px;
 }
+.user_down{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    width: 140%;
+    z-index: 1111;
+}
+.user_button:hover .user_down{
+    display: block;
+    background-color: #f4f5f8;
+    box-shadow: rgba(0, 0, 0, 0.171) 0px 0px 12px 3px !important;
+    transition: all 4s ease-in-out;
+}
+.user-item{
+    font-size: 12px !important;
+
+}
+
+/* user$$$$$$$$$$$$$$$$$ */
