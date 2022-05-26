@@ -67,9 +67,7 @@ button.btn.border-0.ms-n3 {
     top: -1px;
     z-index: 1;
 } */
-.btn i{
-    color: #ee870d;
-}
+
 .btn i:hover{
     color: #ee870d;
     transition: all .4;
@@ -191,6 +189,12 @@ img.photo {
     top: 10px;
     right: 9px;
 }
+.iconat{
+    color: #000000 !important;
+}
+.iconat:hover{
+    color: #ee870d !important;
+}
 button.btn.btn-secondary.tool {
     margin-bottom: 12px;
     width: 42px;
@@ -200,8 +204,8 @@ button.btn.btn-secondary.tool {
 }
 button.btn.btn-secondary.batn  {
     position: absolute;
-    top: 273px;
-    right: 72px;
+    top: 18vw;
+    right: 4vw;
     width: 200%;
     background-color: #ffffff;
     border: none;
@@ -218,14 +222,24 @@ button.btn.btn-secondary.batn a:hover{
     
 }
 .booton {
+    border: none !important;
     margin: 0 auto;
     margin-bottom: 22px;
     width: 70%;
+    padding: 12px;
+    background: rgb(240, 233, 233) !important;
 }
 .booton a{
-    color: #fff;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
+
+.booton a:hover{
+    color: #ee870d;
+
+}
+
+
 .badge{
     background-color: rgb(255, 112, 4);
 }
@@ -626,6 +640,7 @@ li.list-a a:hover {
     border-bottom: 2px solid rgba(239, 215, 215, 0.525);
     width: 100%;
     margin: 0 auto;
+    font-size: 13px !important;
 }
 .shop-item:hover,
 .user-item:hover{
@@ -655,8 +670,7 @@ li.list-a a:hover {
     transition: all 4s ease-in-out;
 }
 .user-item{
-    font-size: 12px !important;
-
+    
 }
 
 /* user$$$$$$$$$$$$$$$$$ */
