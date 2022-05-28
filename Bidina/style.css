@@ -674,3 +674,58 @@ li.list-a a:hover {
 }
 
 /* user$$$$$$$$$$$$$$$$$ */
+
+
+
+/* dasboard */
+
+div#sidebar-wrapper {
+    background: linear-gradient(to top) !important;
+    background: linear-gradient(180deg, #cecac7, #ff710487, #FF7004);
+}
+.prof-dash{
+    text-align: center;
+    padding: 35px 0;
+}
+.img-dash{
+    width: 136px;
+    border-radius: 50%;
+}
+.sid-dash{
+    padding: 0.6rem 3.5rem !important;
+    color: #fff !important;
+    transition: all .4s ease-in-out;
+}
+.sid-dash:hover{
+    color: #ee870d !important;
+    background: #2f333a !important;
+}
+.side{
+    top: 100px !important;
+}
+input#search {
+    width: 261px !important;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 4px;
+    position: relative;
+}
+.ico {
+    position: absolute;
+    top: 24px;
+    right: 26px;
+}
+a.add-pro {
+    text-decoration: none;
+    color: white;
+    background: #2F333A;
+    padding: 12px 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: all .4s ease-in-out;
+}
+a.add-pro:hover{
+    color: #ee870d;
+    background-color: #f4f5f8;
+}
+/* dasboard */
