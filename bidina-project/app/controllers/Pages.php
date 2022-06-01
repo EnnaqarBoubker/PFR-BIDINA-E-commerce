@@ -8,12 +8,26 @@
     public function index(){
 
       $data = [
-        'title' => 'boubker',
+        'title' => 'Home',
       ];
 
       $this -> view('pages/index', $data);
     }
 
-    public function about(){
+    public function signin(){
+
+      $data = [
+        'title' => 'Signin User',
+      ];
+
+      $this -> view('pages/signin', $data);
+    }
+    public function signup(){
+
+      $data = [
+        'title' => 'Signin User',
+      ];
+
+      $this -> view('pages/signup', $data);
     }
   }

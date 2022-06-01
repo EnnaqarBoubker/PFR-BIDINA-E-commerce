@@ -15,7 +15,7 @@
         <nav class="navbar navbar-expand-lg navbar-light ">
             <div class="row row-cols-lg-2 justify-content-around align-items-center m-0 w-100">
                 <div class="col">
-                    <a class="img " href="./index.html">
+                    <a class="img " href="<?php echo URLROOT; ?>">
                         <img class=" image py-3" src="<?php echo URLROOT ?>/img/image-2/logo11.png" alt="logo bidina"></a>
                 </div>
                 <div class="col item-A">
@@ -42,8 +42,8 @@
                         <div class="fs-6 user_button nav-item btn border-0"><i class="far fa-user px-2 iconat"></i>
                             <div class="bg-user-down navbar-a p-3 ">
                                 <ul class=" user_down  list-unstyled">
-                                    <li><a class="dropdown-item px-2 py-2 user-item" href="<?php echo URLROOT; ?>/pages/signin.html">Sign In</a></li>
-                                    <li><a class="dropdown-item px-2 py-2 user-item" href="./signup.html">Sign Up</a></li>
+                                    <li><a class="dropdown-item px-2 py-2 user-item" href="<?php echo URLROOT; ?>/pages/signin">Sign In</a></li>
+                                    <li><a class="dropdown-item px-2 py-2 user-item" href="<?php echo URLROOT; ?>/pages/signup">Sign Up</a></li>
                                 </ul>
                             </div>
                         </div>
