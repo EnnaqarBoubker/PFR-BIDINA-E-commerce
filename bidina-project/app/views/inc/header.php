@@ -11,10 +11,12 @@
     <!-- animation -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="shortcut icon" type="x-icon" href="<?php echo URLROOT ?>/img/image/logo.png">
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">
-    <title><?php echo $data['title'] ?></title>
+    <link rel="stylesheet" href="<?= URLROOT; ?>/css/style.css">
+    <title><?= SITENAME ?></title>
 </head>
 <body>
+
+<a href="#topp"><button id="top" class="top"><i class="fas fa-arrow-up"></i></button></a>
     <?php require APPROOT . '/views/inc/navbar.php'; ?>
     
 

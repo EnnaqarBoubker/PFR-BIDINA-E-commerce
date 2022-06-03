@@ -7,10 +7,10 @@
     
     // __FILE__ = C:\xampp\htdocs\traver-MVC\app\config\config.php && dirname(__FILE__) == __DIR__;
     // app root
-    define('APPROOT', dirname(dirname(__FILE__)));
+    define('APPROOT', dirname(dirname(__FILE__))); // redirect app 
 
     // URL root
-    define('URLROOT','http://localhost/PFR-BIDINA-E-commerce/bidina-project');
+    define('URLROOT','http://localhost/PFR-BIDINA-E-commerce/bidina-project'); // redirect out app
 
     // site Name
      define('SITENAME', 'E-commerce Bidina');

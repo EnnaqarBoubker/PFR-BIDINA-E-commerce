@@ -685,7 +685,6 @@ div#sidebar-wrapper {
 }
 .prof-dash{
     text-align: center;
-    padding: 35px 0;
 }
 .img-dash{
     width: 136px;
@@ -728,4 +727,174 @@ a.add-pro:hover{
     color: #ee870d;
     background-color: #f4f5f8;
 }
+.dash-adm{
+    padding: 2rem 0.5rem !important;
+}
 /* dasboard */
+
+.bg-dark {
+    background: #faffc1 !important;
+}
+
+.text-info {
+    color: #c4c4c4 !important;
+}
+
+.bg-color {
+    background: #f0f9ff;
+}
+
+.colry {
+    color: #74c1ed;
+}
+
+.bg-color-one {
+    background: #fef6fb;
+}
+
+.colry-one {
+    color: #ee95c5;
+}
+
+.bg-color-two {
+    background: #fefbec;
+}
+
+.colry-two,
+.add,
+.delete {
+    color: #00c1fe;
+}
+
+.bg-color-three {
+    background: linear-gradient(69.66deg, #00c1fe 19.39%, #faffc1 96.69%);
+}
+
+.input-group {
+    border: 1px solid #e5e5e5 !important;
+}
+
+
+
+.all-cat{
+    column-gap: 12px;
+}
+.categoris {
+    padding: 20px 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2) !important;
+}
+.categoris-A{
+    background: linear-gradient(to right, #cdcdcd,#ff710430) !important;
+}
+.categoris-B{
+    background: linear-gradient(to right, #cdcdcd,#ff710430) !important;
+}
+.categoris-C{
+    background: linear-gradient(to right, #cdcdcd,#ff710430) !important;
+}
+.categoris-D{
+    background: linear-gradient(to right, #cdcdcd,#ff710430) !important;
+}
+
+.view-all-por {
+    text-align: center;
+    margin: 35px 0px 0;
+}
+
+button.view-pro {
+    padding: 12px 40px;
+    border: none;
+    border-radius: 6px;
+    background: #2f333a;
+    
+    
+}
+.href-view{
+    color: #fff !important;
+    background-color: #2F333A;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    padding: 17px 39px;
+    border-radius: 10px;
+    transition: ease-out 0.3s;
+    outline: none;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 0 0 0 #ee870d !important;
+}
+.href-view:hover{
+    box-shadow: inset 300px 0 0 0 #ee870d !important;
+}
+
+img.prod-dash {
+    width: 50px;
+    border-radius: 50%;
+}
+
+
+/*$$$$$$$$ button view all categorise $$$$$*/
+
+/*$$$$$$$$ button view all categorise $$$$$*/.btn-view-cate{
+    padding: 10px 20px;
+    color: #ffffff;
+    background: #2f333a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    transition: all .3s;
+}
+.btn-view-cate:hover{
+    color: #ee870d !important;
+    background-color: rgb(0, 0, 0);
+
+}
+
+
+
+
+/*$$$ button add to card the product*/
+button .exept{
+    border-radius: 0 !important;
+    border: 0 !important;
+    font-size: 1rem !important;
+}
+
+button.btn.btn-secondary.batn .exept:hover{
+    color: #ee870d !important;
+    text-shadow: none !important;
+    background-color: transparent;
+}
+/*$$$ button add to card the product*/
+
+
+/* $$$ button go top fixed*/
+.top{
+    position: fixed;
+    top: 38rem;
+    right: 3rem;
+    z-index: 9999;
+    padding: 13px 21px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: #999;
+    color: #f9fafb;
+    font-size: 1.5rem;
+}
+.top:hover{
+    color: #ee870d !important;
+    background-color: #000000 !important;
+}
+/* $$$ button go top fixed*/
+
+/* $$$$$ card user in dashboard admin */
+
+img.w-50.img-use {
+    margin: 8px 72px!important;
+    border-radius: 51% !important;
+}
+
+
+/* $$$$$ card user in dashboard admin */

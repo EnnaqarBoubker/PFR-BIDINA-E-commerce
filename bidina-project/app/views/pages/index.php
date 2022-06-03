@@ -174,9 +174,13 @@
                         <!-- <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li> -->
                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                        <button class="btn btn-secondary batn d-none d-lg-block d-md-none"><a href="#"><i
-                                    class="fas fa-shopping-cart"></i>
-                                Add to Card</a></button>
+                        <li>
+                            <button type="button " class="btn btn-secondary btn-exept batn d-none d-lg-block d-md-none">
+                                <a class="exept" href="#">
+                                    <i class="fas fa-shopping-cart"></i>Add to Card
+                                </a>
+                            </button>
+                        </li>
                     </ul>
                 </div>
                 <div class="product-content">
@@ -202,8 +206,13 @@
                     <ul class="product-links">
                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                        <button type="button" class="btn btn-secondary batn d-none d-lg-block d-md-none"><a
-                                href="#"><i class="fas fa-shopping-cart"></i>Add to Card</a></button>
+                        <li>
+                            <button type="button " class="btn btn-secondary btn-exept batn d-none d-lg-block d-md-none">
+                                <a class="exept" href="#">
+                                    <i class="fas fa-shopping-cart"></i>Add to Card
+                                </a>
+                            </button>
+                        </li>
                     </ul>
                 </div>
                 <div class="product-content">
@@ -225,8 +234,13 @@
                         <!-- <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li> -->
                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                        <button type="button" class="btn btn-secondary batn d-none d-lg-block d-md-none"><a
-                                href="#"><i class="fas fa-shopping-cart"></i>Add to Card</a></button>
+                        <li>
+                            <button type="button " class="btn btn-secondary btn-exept batn d-none d-lg-block d-md-none">
+                                <a class="exept" href="#">
+                                    <i class="fas fa-shopping-cart"></i>Add to Card
+                                </a>
+                            </button>
+                        </li>
                     </ul>
                 </div>
                 <div class="product-content">
@@ -251,8 +265,13 @@
                         <!-- <li><a href="#"></a></li> -->
                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                        <button type="button" class="btn btn-secondary batn d-none d-lg-block d-md-none"><a
-                                href="#"><i class="fas fa-shopping-cart"></i>Add to Card</a></button>
+                        <li>
+                            <button type="button " class="btn btn-secondary btn-exept batn d-none d-lg-block d-md-none">
+                                <a class="exept" href="#">
+                                    <i class="fas fa-shopping-cart"></i>Add to Card
+                                </a>
+                            </button>
+                        </li>
                     </ul>
                 </div>
                 <div class="product-content">
@@ -277,8 +296,13 @@
                         <!-- <li><a href="#"></a></li> -->
                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                        <button type="button" class="btn btn-secondary batn d-none d-lg-block d-md-none"><a
-                                href="#"><i class="fas fa-shopping-cart"></i>Add to Card</a></button>
+                        <li>
+                            <button type="button " class="btn btn-secondary btn-exept batn d-none d-lg-block d-md-none">
+                                <a class="exept" href="#">
+                                    <i class="fas fa-shopping-cart"></i>Add to Card
+                                </a>
+                            </button>
+                        </li>
                     </ul>
                 </div>
                 <div class="product-content">
@@ -300,8 +324,13 @@
                         <!-- <li><a href="#"></a></li> -->
                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                        <button type="button" class="btn btn-secondary batn d-none d-lg-block d-md-none"><a
-                                href="#"><i class="fas fa-shopping-cart"></i>Add to Card</a></button>
+                        <li>
+                            <button type="button " class="btn btn-secondary btn-exept batn d-none d-lg-block d-md-none">
+                                <a class="exept" href="#">
+                                    <i class="fas fa-shopping-cart"></i>Add to Card
+                                </a>
+                            </button>
+                        </li>
                     </ul>
                 </div>
                 <div class="product-content">
@@ -323,8 +352,13 @@
                         <!-- <li><a href="#"></a></li> -->
                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                        <button type="button" class="btn btn-secondary batn d-none d-lg-block d-md-none"><a
-                                href="#"><i class="fas fa-shopping-cart"></i> Add to Card</a></button>
+                        <li>
+                            <button type="button " class="btn btn-secondary btn-exept batn d-none d-lg-block d-md-none">
+                                <a class="exept" href="#">
+                                    <i class="fas fa-shopping-cart"></i>Add to Card
+                                </a>
+                            </button>
+                        </li>
                     </ul>
                 </div>
                 <div class="product-content">
@@ -347,8 +381,13 @@
                         <!-- <li><a href="#"></a></li> -->
                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                        <button type="button" class="btn btn-secondary batn d-none d-lg-block d-md-none"><a
-                                href="#"><i class="fas fa-shopping-cart"></i> Add to Card</a></button>
+                        <li>
+                            <button type="button" class="btn btn-secondary btn-exept batn d-none d-lg-block d-md-none">
+                                <a class="exept" href="#">
+                                    <i class="fas fa-shopping-cart"></i>Add to Card
+                                </a>
+                            </button>
+                        </li>
                     </ul>
                 </div>
                 <div class="product-content">
