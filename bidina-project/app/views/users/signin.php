@@ -15,19 +15,19 @@
         </div>
         <div class=" card border-0 p-4 m-5 col-lg-5 col-md-6 col-sm-7 mx-auto">
             <div class="signin-a card-body row">
-                <form>
+                <form action="<?= URLROOT; ?>/users/signin" method="POST">
                     <div class="mb-3">
-                        <label for="mail" class="form-label">Email <span class="text-danger fs-5">*</span></label>
+                        <label for="mail" class="form-label">Email <sup class="text-danger fs-5">*</sup></label>
                         <input type="text" class="form-control" id="mail" placeholder="Enter your email" name="email" value="">
                     </div>
                     <div class="mb-4">
-                        <label for="password1" class="form-label">Password <span class="text-danger fs-5">*</span></label>
+                        <label for="password1" class="form-label">Password <sup class="text-danger fs-5">*</sup></label>
                         <input type="password" class="form-control" id="password1" placeholder="Enter your password" name="password" value="">
                     </div>
                     <input class="buton btn btn-lg w-100 text-white" type="submit" name="submit" value="Sign In">
 
                     <div class="buton-a d-flex flex-column flex-lg-row flex-md-column justify-content-between py-3">
-                        <a class=" udme udme-a d-inline-block" href="<?= URLROOT; ?>/pages/signup">Create a account</a>
+                        <a class=" udme udme-a d-inline-block" href="<?= URLROOT; ?>/users/signup">Create a account</a>
                         <a class=" udme udme-b" href="#">Forget Password?</a> 
                     </div>
                 </form>

@@ -8,28 +8,14 @@
     public function index(){
 
       $data = [
-        'title' => 'Home',
+        'title' => 'khalid',
       ];
 
       $this -> view('pages/index', $data);
     }
 
-    public function signin(){
-
-      $data = [
-        'title' => 'Signin User',
-      ];
-
-      $this -> view('pages/signin', $data);
-    }
-    public function signup(){
-
-      $data = [
-        'title' => 'Signin User',
-      ];
-
-      $this -> view('pages/signup', $data);
-    }
+ 
+    
     public function dashAdm(){
 
       $data = [
@@ -53,5 +39,29 @@
       ];
 
       $this -> view('pages/dashAdmUse', $data);
+    }
+    public function addProd(){
+
+      $data = [
+        'title' => 'formulaire add product',
+      ];
+
+      $this -> view('pages/addProd', $data);
+    }
+    public function editeProd(){
+
+      $data = [
+        'title' => 'formulaire Edite product',
+      ];
+
+      $this -> view('pages/editeProd', $data);
+    }
+    public function panier(){
+
+      $data = [
+        'title' => 'formulaire Edite product',
+      ];
+
+      $this -> view('pages/panier', $data);
     }
   }

@@ -27,11 +27,14 @@
                 
                 <div class="list-group list-group-flush">
                     <ul class="list-unstyled ">
-                        <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT ; ?>/pages/dashAdm"><i class="fas fa-tachometer-alt"></i>&emsp; Dashboard</a></li>
-                        <li><a class="sid-dash nav nav-link align-middle" href="#"><i class="fas fa-id-card-alt"></i>&emsp; Profil</a></li>
-                        <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT ; ?>/pages/dashAdmUse"><i class="fas fa-user-alt"></i>&emsp; User</a></li>
-                        <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT ; ?>/pages/dashProd"><i class="fab fa-product-hunt"></i>&emsp; Produit</a></li> 
-                        <li><a class="sid-dash nav nav-link align-middle position-relative side" href="#"> Logout &emsp;<i class="fas fa-sign-out-alt"></i></a></li>  
+                        <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/pages/dashAdm"><i class="fas fa-tachometer-alt"></i>&emsp; Dashboard</a></li>
+                        <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/pages/dashProd"><i class="fab fa-product-hunt"></i>&emsp; Produit</a></li> 
+                        <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/pages/dashAdmUse"><i class="fas fa-user-alt"></i>&emsp; User</a></li>
+                        <li><a class="sid-dash nav nav-link align-middle" href="#"><i class="fas fa-money-bill"></i>&emsp; Earning</a></li>
+                        <li><a class="sid-dash nav nav-link align-middle" href="#"><i class="fab fa-product-hunt"></i>&emsp; Commands</a></li> 
+
+                        <li><a class="sid-dash nav nav-link align-middle position-relative side" href="#"> Logout &emsp;<i class="fas fa-sign-out-alt"></i></a></li>
+                          
                     </ul>
 
                 </div>
@@ -41,7 +44,10 @@
                 <!-- Top navigation-->
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                     <div class="container-fluid">
+                        <div class="">
                         <button class="btn" id="sidebarToggle"><i class="fas fa-bars fs-4"></i></button>
+                        <a href="<?= URLROOT; ?>" class="btn"><i class="fas fa-home fs-4"></i></a>
+                        </div>
                         <form action="">
                             <input type="search" name="search" id="search">
                             <i class="ico fas fa-search"></i>

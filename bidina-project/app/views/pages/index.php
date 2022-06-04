@@ -1,6 +1,5 @@
 <?php  require APPROOT . '/views/inc/header.php'; ?>
     
-
 <main>
 
 <div id="carouselExampleIndicators" class="carousel slide d-flex align-items-center" data-bs-ride="carousel">
@@ -24,7 +23,7 @@
                                 incididunt ut
                                 labore
                                 et dolore magna</p>
-                            <a href="#" class="btn btn-lg mt-5">Shop Now</a>
+                            <a href="" class="btn btn-lg mt-5">Shop Now</a>
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-5 col-sm-5 animate__animated animate__backInUp">
@@ -49,7 +48,7 @@
                                 incididunt ut
                                 labore
                                 et dolore magna</p>
-                            <a href="#" class="btn btn-lg mt-5">Shop Now</a>
+                            <a href="" class="btn btn-lg mt-5">Shop Now</a>
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-5 col-sm-5 animate__animated animate__backInUp">
@@ -100,45 +99,6 @@
         </div>
     </div>
 </div>
-
-
-<!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner categ d-flex container justify-content-around">
-        <div class="carousel-item active cat-item">
-            <div class="item-1">
-                <img src="./image-2/1.png" alt="">
-                <h6 class="py-3">Office Chair</h6>
-            </div>
-        </div>
-        <div class="carousel-item cat-item">
-            <div class="item-1">
-                <img src="./image-2/2.png" alt="">
-                <h6 class="py-3">Book Shelf</h6>
-            </div>
-        </div>
-        <div class="carousel-item cat-item">
-            <div class="item-1">
-                <img src="./image-2/4.png" alt="">
-                <h6 class="py-3">Reading Table</h6>
-            </div>
-        </div>
-        <div class="carousel-item cat-item">
-            <div class="item-1">
-                <img src="./image-2/5.png" alt="">
-                <h6 class="py-3">Corner Table</h6>
-            </div>
-        </div>
-        <div class="carousel-item cat-item">
-            <div class="item-1">
-                <img src="./image-2/5.png" alt="">
-                <h6 class="py-3">Corner Table</h6>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
-
 
 <div class="mool">
     <div class="mool-1 text-center">

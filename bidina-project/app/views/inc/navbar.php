@@ -42,8 +42,8 @@
                         <div class="fs-6 user_button nav-item btn border-0"><i class="far fa-user px-2 iconat"></i>
                             <div class="bg-user-down navbar-a p-3 ">
                                 <ul class=" user_down  list-unstyled">
-                                    <li><a class="dropdown-item px-2 py-2 user-item" href="<?php echo URLROOT; ?>/pages/signin">Sign In</a></li>
-                                    <li><a class="dropdown-item px-2 py-2 user-item" href="<?php echo URLROOT; ?>/pages/signup">Sign Up</a></li>
+                                    <li><a class="dropdown-item px-2 py-2 user-item" href="<?= URLROOT; ?>/users/signin">Sign In</a></li>
+                                    <li><a class="dropdown-item px-2 py-2 user-item" href="<?= URLROOT; ?>/users/signup">Sign Up</a></li>
                                 </ul>
                             </div>
                         </div>

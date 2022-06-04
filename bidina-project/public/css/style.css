@@ -244,9 +244,9 @@ button.btn.btn-secondary.batn a:hover{
     background-color: rgb(255, 112, 4);
 }
 
-/* .offcanvas-top {
-    height: 20vh !important;
-} */
+.offcanvas-top {
+    /* height: 22vh !important; */
+}
 
 
 
@@ -691,9 +691,10 @@ div#sidebar-wrapper {
     border-radius: 50%;
 }
 .sid-dash{
-    padding: 0.6rem 3.5rem !important;
+    padding: 0.6rem 4.5rem !important;
     color: #fff !important;
     transition: all .4s ease-in-out;
+    font-size: 12px !important;
 }
 .sid-dash:hover{
     color: #ee870d !important;
@@ -771,7 +772,7 @@ a.add-pro:hover{
 }
 
 .input-group {
-    border: 1px solid #e5e5e5 !important;
+    /* border: 1px solid #e5e5e5 !important; */
 }
 
 
@@ -785,17 +786,10 @@ a.add-pro:hover{
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2) !important;
 }
 .categoris-A{
-    background: linear-gradient(to right, #cdcdcd,#ff710430) !important;
+    background: rgb(186 186 186)!important;
+
 }
-.categoris-B{
-    background: linear-gradient(to right, #cdcdcd,#ff710430) !important;
-}
-.categoris-C{
-    background: linear-gradient(to right, #cdcdcd,#ff710430) !important;
-}
-.categoris-D{
-    background: linear-gradient(to right, #cdcdcd,#ff710430) !important;
-}
+
 
 .view-all-por {
     text-align: center;
@@ -836,7 +830,8 @@ img.prod-dash {
 
 /*$$$$$$$$ button view all categorise $$$$$*/
 
-/*$$$$$$$$ button view all categorise $$$$$*/.btn-view-cate{
+/*$$$$$$$$ button view all categorise $$$$$*/
+.btn-view-cate{
     padding: 10px 20px;
     color: #ffffff;
     background: #2f333a;
@@ -898,3 +893,10 @@ img.w-50.img-use {
 
 
 /* $$$$$ card user in dashboard admin */
+
+.categoris.catego {
+    background: #718584b3 !important;
+}
+.categ-rr{
+    color: #000000 !important;
+}

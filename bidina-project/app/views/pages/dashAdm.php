@@ -4,54 +4,61 @@
         
                 <!-- Page content-->
                 <div class="container">
-                    <ul class="row list-unstyled mt-2 mt-lg-4 d-flex justify-content-evenly">
-                        <li class=" mb-2 col-md-6 mb-md-2 col-lg-3">
-                            <div class=" equal-hight border p-3 bg-color border-0 rounded-2" >
-                                <div class="">
-                                    <i class="far fa-user fs-1 colry"></i>
-                                    
-                                    <p class="text-info">Users</p>
-                                </div>
-                                <div class="p-O d-flex justify-content-end fw-bold fs-4">4</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="mb-2 col-md-6 mb-md-2 col-lg-3">
-                            <div class="  equal-hight border p-3 bg-color-one border-0 rounded-2" >
-                                <div class="">
-                                    <i class="fab fa-product-hunt fs-1 colry-one"></i>
-                                    
-                                    <p class="text-info">Produit</p>
-                                </div>
-                                <div class="p-O d-flex justify-content-end">
-                                    <p class="mt-0 mt-lg-3 mb-0 fw-bolder fs-4 ">4</p>
+                    <div class="row m-5">
+                        <div class="col-12 col-lg-6 pb-sm-2">
+                            <div class="categoris catego">
+                                <div class="d-flex flex-column">
+                                    <div class="categ-rr">
+                                        <i class="fab fa-product-hunt fs-4"></i>
+                                        <h5 class="pt-3">Produits</h5>
+                                    </div>
+                                    <div class="categ-rr">
+                                        <h6 class="float-end fs-4">4</h6>
+                                    </div>
                                 </div>
                             </div>
-                        </li>
-                        <li class=" mb-2 col-md-6 mb-md-2 col-lg-3">
-                            <div class=" equal-hight border p-3 bg-color-two border-0 rounded-2" >
-                                <div class="">
-                                    <!-- <i class="far fa-money-bill colry-two"></i> -->
-                                    <i class="fal fa-usd-circle"></i>
-                                    <p class="text-info">Earnings</p>
-                                </div>
-                                <div class="p-O d-flex justify-content-end">
-                                    <p class="mt-0 mt-lg-3 mb-0 fw-bolder fs-4 ">12<span class="fs-5 fw-bold"> DHS</span></p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class=" col-md-6 col-lg-3">
-                            <div class=" equal-hight border p-3 bg-color-three border-0 rounded-2" >
-                                <div class="">
-                                    <i class="fa fa-user-o fs-1 text-white" aria-hidden="true"></i>
-                                    <p class="text-info">Users</p>
-                                </div>
-                                <div class="p-O d-flex justify-content-end">
-                                    <p class="mt-0 mt-lg-3 mb-0 fw-bolder fs-4 ">12</p>
+                        </div>
+                        <div class="col-12 col-lg-6 pb-sm-2">
+                            <div class="categoris catego">
+                                <div class="d-flex flex-column">
+                                    <div class="categ-rr">
+                                        <i class="fas fa-user fs-4"></i>
+                                        <h5 class="pt-3">Users</h5>
+                                    </div>
+                                    <div class="categ-rr">
+                                        <h6 class="float-end fs-4">4</h6>
+                                    </div>
                                 </div>
                             </div>
-                        </li>
-                    </ul>
+                        </div>
+                        <div class="col-12 col-lg-6 pb-sm-2">
+                            <div class="categoris catego">
+                                <div class="d-flex flex-column">
+                                    <div class="categ-rr">
+                                        <i class="fas fa-money-bill fs-4"></i>
+                                        <h5 class="pt-3">Earning</h5>
+                                    </div>
+                                    <div class="categ-rr">
+                                        <h6 class="float-end fs-4">4</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 pb-sm-2">
+                            <div class="categoris catego">
+                                <div class="d-flex flex-column">
+                                    <div class="categ-rr">
+                                        <i class="fas fa-dolly-flatbed fs-4"></i>
+                                        <h5 class="pt-3">Commands</h5>
+                                    </div>
+                                    <div class="categ-rr">
+                                        <h6 class="float-end fs-4">4</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         </div>
