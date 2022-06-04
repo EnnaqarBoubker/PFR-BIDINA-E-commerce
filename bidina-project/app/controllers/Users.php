@@ -3,7 +3,7 @@
 class Users extends Controller
 {
     public function __construct(){
-
+        $this -> userModel = $this -> model('User');
     }
 
     public function signup()
@@ -11,14 +11,14 @@ class Users extends Controller
         // Check for POST
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // process form
-            // $_POST = filter_input_array(INPUT_POST, htmlspecialchars());
+            // $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $data = [
-                'firstName' => trim($_POST['firstName']),
-                'lastName' => trim($_POST['lastName']),
-                'email' => trim($_POST['email']),
-                'phone' => trim($_POST['phone']),
-                'password' => trim($_POST['password']),
-                'confirm_password' => trim($_POST['confirm_password']),
+                'firstName' => trim(htmlspecialchars($_POST['firstName'])),
+                'lastName' => trim(htmlspecialchars($_POST['lastName'])),
+                'email' => trim(htmlspecialchars($_POST['email'])),
+                'phone' => trim(htmlspecialchars($_POST['phone'])),
+                'password' => trim(htmlspecialchars($_POST['password'])),
+                'confirm_password' => trim(htmlspecialchars($_POST['confirm_password'])),
                 'firstName_err' => '',
                 'lastName_err' => '',
                 'email_err' => '',
@@ -40,6 +40,11 @@ class Users extends Controller
             // validate email input
             if(empty($data['email'])){
                 $data['email_err'] = 'Enter your email';
+            }else{
+                //check mail
+                if($this -> userModel -> verifAcoun($data['email'])){
+                    $data['email_err'] = 'Email is already taken';
+                }
             }
 
             // validate phone input
@@ -65,12 +70,12 @@ class Users extends Controller
 
 
             // Make sure errors are empty
-            if(empty($data['firstName']) && empty($data['name_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])){
+            if(empty($data['firstName_err']) && empty($data['lastName_err']) && empty($data['email_err']) && empty($data['phone_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])){
                 // Validated
                 die('SUCCESS');
             } else {
                 // Load view with errors
-                $this->view('users/register', $data);
+                $this->view('users/signup', $data);
             }
 
         } else {
@@ -103,6 +108,34 @@ class Users extends Controller
         // Check for POST
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // process form
+
+            $data = [
+                'email' => trim(htmlspecialchars($_POST['email'])),
+                'password' => trim(htmlspecialchars($_POST['password'])),
+                'email_err' => '',
+                'password_err' => '',
+            ];
+
+            // validate email input
+            if(empty($data['email'])){
+                $data['email_err'] = 'Enter your email';
+            }
+
+            // validate password input
+            if(empty($data['password'])){
+                $data['password_err'] = 'Enter your password';
+            }
+
+
+             // Make sure errors are empty
+             if(empty($data['email_err']) && empty($data['password_err'])){
+                // Validated
+                die('SUCCESS');
+            } else {
+                // Load view with errors
+                $this->view('users/signin', $data);
+            }
+
         } else {
             // load form
             // echo 'load form';

@@ -3,7 +3,7 @@
             <div class="container-fluid">
                 <div class="titl d-flex justify-content-between align-items-center">
                     <h2 class="mt-4">Simple Poduct</h2>
-                    <a class="add-pro" href="<?= URLROOT; ?>/pages/addProd" >Add Product &emsp; <i class="fas fa-plus-circle"></i></a>
+                    <a class="add-pro" href="<?= URLROOT; ?>/dashboardAdmin/addProd" >Add Product &emsp; <i class="fas fa-plus-circle"></i></a>
                 </div>
                   <div class="collapse" id="collapseExample">
                     <div class="card card-body border-0 p-0">
@@ -99,7 +99,7 @@
                                 <td>90.12</td>
                                 <td>chair</td>
                                 <td>
-                                    <a href="<?= URLROOT; ?>/pages/editeProd" class="fs-5 add text-decoration-none me-2" title="Edite"><i class="fas fa-edit"></i></a>
+                                    <a href="<?= URLROOT; ?>/dashboardAdmin/editeProd" class="fs-5 add text-decoration-none me-2" title="Edite"><i class="fas fa-edit"></i></a>
                                     <a href="" class="fs-5 delete text-decoration-none" title="Delete"><i class="fas fa-backspace"></i></a>
                                 </td>
                               </tr>
@@ -110,7 +110,7 @@
                                 <td>90.12</td>
                                 <td>chair</td>
                                 <td>
-                                    <a href="<?= URLROOT; ?>/pages/editeProd" class="fs-5 add text-decoration-none me-2" title="Edite"><i class="fas fa-edit"></i></a>
+                                    <a href="<?= URLROOT; ?>/dashboardAdmin/editeProd" class="fs-5 add text-decoration-none me-2" title="Edite"><i class="fas fa-edit"></i></a>
                                     <a href="" class="fs-5 delete text-decoration-none" title="Delete"><i class="fas fa-backspace"></i></a>
                                 </td>
                               </tr>

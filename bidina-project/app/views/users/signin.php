@@ -17,12 +17,14 @@
             <div class="signin-a card-body row">
                 <form action="<?= URLROOT; ?>/users/signin" method="POST">
                     <div class="mb-3">
-                        <label for="mail" class="form-label">Email <sup class="text-danger fs-5">*</sup></label>
-                        <input type="text" class="form-control" id="mail" placeholder="Enter your email" name="email" value="">
+                        <label for="email" class="form-label">Email <span class="text-danger fs-5">*</span></label>
+                        <input type="text" name="email"  placeholder="Enter your email" class="form-control <?= (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>">
+                        <span class="invalid-feedback"><?= $data['email_err'] ?></span>
                     </div>
                     <div class="mb-4">
-                        <label for="password1" class="form-label">Password <sup class="text-danger fs-5">*</sup></label>
-                        <input type="password" class="form-control" id="password1" placeholder="Enter your password" name="password" value="">
+                        <label for="password" class="form-label">Password <span class="text-danger fs-5">*</span></label>
+                        <input type="password" name="password" placeholder="Enter your password" class="form-control <?= (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" >
+                        <span class="invalid-feedback"><?= $data['password_err'] ?></span>
                     </div>
                     <input class="buton btn btn-lg w-100 text-white" type="submit" name="submit" value="Sign In">
 

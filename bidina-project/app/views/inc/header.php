@@ -18,6 +18,6 @@
 <body>
 
 <!-- <a href=""><button id="top" class="top"><i class="fas fa-arrow-up"></i></button></a> -->
-    <?php require APPROOT . '/views/inc/navbar.php'; ?>
+   
     
 

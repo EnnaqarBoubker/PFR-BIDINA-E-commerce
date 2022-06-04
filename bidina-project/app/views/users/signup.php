@@ -39,12 +39,12 @@
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label ">Password <span class="text-danger fs-5">*</span></label>
-                    <input type="password"  name="password" placeholder="Enter your password" class="form-control <?= (!empty($data['password_err'])) ? 'is_invalid' : ''; ?>">
+                    <input type="password"  name="password" placeholder="Enter your password" class="form-control <?= (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>">
                     <span class="invalid-feedback"><?= $data['password_err'] ?></span>
                 </div>
                 <div class="mb-3">
-                    <label for="confPass" class="form-label ">Confirm Password <span class="text-danger fs-5">*</span></label>
-                    <input type="password"  name="confPass" placeholder="Confirm Password" class="form-control <?= (!empty($data['confirm_password_err'])) ? 'is_invalid' : ''; ?>">
+                    <label for="confirm_password'" class="form-label ">Confirm Password <span class="text-danger fs-5">*</span></label>
+                    <input type="password"  name="confirm_password" placeholder="Confirm Password" class="form-control <?= (!empty($data['confirm_password_err'])) ? 'is-invalid' : ''; ?>">
                     <span class="invalid-feedback"><?= $data['confirm_password_err'] ?></span>
                 </div>
                 <div class="form-check mb-3">

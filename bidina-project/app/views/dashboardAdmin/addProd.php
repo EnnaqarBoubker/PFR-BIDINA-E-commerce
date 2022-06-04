@@ -1,7 +1,7 @@
-<?php require_once APPROOT . "/views/inc/head.php" ?>
+<?php require_once APPROOT . "/views/inc/header.php" ?>
 
 <div class="container p-4">
-    <a href="<?= URLROOT;?>/pages/dashProd" class="btn btn-sm btn-secondary mr-2 mb-4">
+    <a href="<?= URLROOT;?>/dashboardAdmin/dashProd" class="btn btn-sm btn-secondary mr-2 mb-4">
         <i class="fas fa-home"></i>
     </a>
     <form method="post">

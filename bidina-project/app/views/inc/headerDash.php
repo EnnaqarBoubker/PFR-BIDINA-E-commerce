@@ -27,9 +27,9 @@
                 
                 <div class="list-group list-group-flush">
                     <ul class="list-unstyled ">
-                        <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/pages/dashAdm"><i class="fas fa-tachometer-alt"></i>&emsp; Dashboard</a></li>
-                        <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/pages/dashProd"><i class="fab fa-product-hunt"></i>&emsp; Produit</a></li> 
-                        <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/pages/dashAdmUse"><i class="fas fa-user-alt"></i>&emsp; User</a></li>
+                        <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/dashboardAdmin/dashAdm"><i class="fas fa-tachometer-alt"></i>&emsp; Dashboard</a></li>
+                        <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/dashboardAdmin/dashProd"><i class="fab fa-product-hunt"></i>&emsp; Produit</a></li> 
+                        <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/dashboardAdmin/dashAdmUse"><i class="fas fa-user-alt"></i>&emsp; User</a></li>
                         <li><a class="sid-dash nav nav-link align-middle" href="#"><i class="fas fa-money-bill"></i>&emsp; Earning</a></li>
                         <li><a class="sid-dash nav nav-link align-middle" href="#"><i class="fab fa-product-hunt"></i>&emsp; Commands</a></li> 
 
