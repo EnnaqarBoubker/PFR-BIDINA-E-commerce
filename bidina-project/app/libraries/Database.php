@@ -38,30 +38,37 @@
 
         // prepare statment with query
         public function query($sql){
-            $this -> stmt = $this-> dbh -> prepare($sql);
+            $this -> stmt = $this -> dbh -> prepare($sql);
         }
 
+        
         //bind Values
         public function bind($param, $value, $type = null){
-            if (is_null($type)) {
-                switch(true){
-                    case is_int($value):
-                        $type = PDO::PARAM_INT;
-                        break;
-                    case is_bool($value):
-                        $type = PDO::PARAM_BOOL;
-                        break;
-                    case is_null($value):
-                        $type = PDO::PARAM_NULL;
-                        break;
-                    default:
-                        $type = PDO::PARAM_STR;
-                }
+            if(is_null($type)){
+              switch(true){
+                case is_int($value):
+                  $type = PDO::PARAM_INT;
+                  break;
+                case is_bool($value):
+                  $type = PDO::PARAM_BOOL;
+                  break;
+                case is_null($value):
+                  $type = PDO::PARAM_NULL;
+                  break;
+                default:
+                  $type = PDO::PARAM_STR;
+              }
             }
+      
+            $this->stmt->bindValue($param, $value, $type);
+          }
 
-            return $this -> stmt -> bindValue($param, $value, $type);
+          // execute statment
+        public function execute(){
+
+            return $this-> stmt -> execute();
         }
-
+         
         // execute the prepared statment
         public function resultSet(){
             $this -> stmt -> execute();

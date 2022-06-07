@@ -1,7 +1,7 @@
 <?php
 
-class Users extends Controller
-{
+class Users extends Controller{
+
     public function __construct(){
         $this -> userModel = $this -> model('User');
     }
@@ -27,22 +27,37 @@ class Users extends Controller
                 'confirm_password_err' => ''
             ];
 
+
+            // validation with regix
+
+            $nameValidation = "/^[a-zA-Z' ]*$/";
+            $phoneValidation = "/^[0-9]*$/";
+            $passwordValidation = "/^(.{0,6}|[^a-z]*|[^\d]*)$/i";
+            $emailValidation = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
+
             // validate first name input
             if(empty($data['firstName'])){
                 $data['firstName_err'] = 'Enter your First Name';
+            }elseif (!preg_match($nameValidation, $data['firstName'])) {
+                $data['firstName_err'] = 'First Name can only contain letters .';
             }
 
             // validate last name input
             if(empty($data['lastName'])){
                 $data['lastName_err'] = 'Enter your Last Name';
+            }elseif (!preg_match($nameValidation, $data['lastName'])) {
+                $data['lastName_err'] = 'Last Name can only contain letters .';
             }
 
             // validate email input
             if(empty($data['email'])){
                 $data['email_err'] = 'Enter your email';
-            }else{
+            }elseif (!preg_match($emailValidation, $data['email'])) {
+                $data['email_err'] = 'E-mail can only contain letters .';
+            }
+            else{
                 //check mail
-                if($this -> userModel -> verifAcoun($data['email'])){
+                if($this -> userModel -> findUserByEmail($data['email'])){
                     $data['email_err'] = 'Email is already taken';
                 }
             }
@@ -50,13 +65,15 @@ class Users extends Controller
             // validate phone input
             if(empty($data['phone'])){
                 $data['phone_err'] = 'Enter your phone';
+            }elseif (!preg_match($phoneValidation, $data['phone'])) {
+                $data['phone_err'] = 'Phone can only contain letters .';
             }
 
             // validate password input
             if(empty($data['password'])){
                 $data['password_err'] = 'Enter your password';
-            }elseif(strlen($data['password']) < 6){
-                $data['password_err'] = 'Password must be at least 6 characters';
+            }elseif (!preg_match($passwordValidation, $data['password'])) {
+                $data['password'] = 'Password must be at least 6 characters.';
             }
 
             // validate coonfirm password input
@@ -68,11 +85,17 @@ class Users extends Controller
                 }
             }
 
-
             // Make sure errors are empty
             if(empty($data['firstName_err']) && empty($data['lastName_err']) && empty($data['email_err']) && empty($data['phone_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])){
-                // Validated
-                die('SUCCESS');
+                //hash password
+                $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+                // creat count signup
+               if ( $this -> userModel -> signup($data)) {
+                    // flash('register_success', 'You are registered and can log in');
+                    redirect('users/signin');
+               }else{
+                   echo 'something went wonrg';
+               }
             } else {
                 // Load view with errors
                 $this->view('users/signup', $data);
@@ -82,7 +105,7 @@ class Users extends Controller
             // load form
             // echo 'load form';
             // init data
-            $data = [
+            $data = [ 
                 'firstName' => '',
                 'lastName' => '',
                 'email' => '',
@@ -96,8 +119,6 @@ class Users extends Controller
                 'password_err' => '',
                 'confirm_password_err' => ''
             ];
-
-
             $this->view('users/signup', $data);
         }
     }
@@ -127,10 +148,27 @@ class Users extends Controller
             }
 
 
+            // check for user / email
+            if($this -> userModel -> findUserByEmail($data['email'])){
+                //user found
+            }else{
+                //user is not
+                $data['email_err'] = 'User Not found';
+            }
+
+
              // Make sure errors are empty
              if(empty($data['email_err']) && empty($data['password_err'])){
                 // Validated
-                die('SUCCESS');
+                $logined = $this -> userModel -> signin($data['email'], $data['password']);
+
+                if($logined){
+                    // creat session var
+                    $this -> creatSessionUser($logined);
+                }else{
+                    $data['password_err'] = 'Password incorrect';
+                    $this->view('users/signin', $data);
+                }
             } else {
                 // Load view with errors
                 $this->view('users/signin', $data);
@@ -150,5 +188,23 @@ class Users extends Controller
 
             $this->view('users/signin', $data);
         }
+    }
+    // the session makes server identify the information user;
+    public function creatSessionUser($user)
+    {
+       $_SESSION['user_id'] = $user -> id; // the id came from model
+       $_SESSION['user_email'] = $user -> email;
+       $_SESSION['user_password'] = $user -> password;
+       redirect('pages/index');
+    }
+
+    public function logout()
+    {
+       unset($_SESSION['user_id']);
+       unset($_SESSION['user_email']);
+       unset($_SESSION['user_password']);
+
+       session_destroy();
+       redirect('pages/index');
     }
 }

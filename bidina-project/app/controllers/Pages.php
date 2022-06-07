@@ -25,4 +25,7 @@
 
       $this -> view('pages/panier', $data);
     }
+
+
+    
   }

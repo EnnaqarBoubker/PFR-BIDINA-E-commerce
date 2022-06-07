@@ -12,7 +12,8 @@
                 </select>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-light" id="topp">
+        <nav class="navbar navbar-expand-lg navbar-light w-100" id="topp">
+            <div class="container-fluid">
             <div class="row row-cols-lg-2 justify-content-around align-items-center m-0 w-100">
                 <div class="col">
                     <a class="img " href="<?php echo URLROOT; ?>">
@@ -39,11 +40,16 @@
                             </div>
                         </div>
                         
-                        <div class="fs-6 user_button nav-item btn border-0"><i class="far fa-user px-2 iconat"></i>
+                        <div class="fs-6 user_button nav-item btn border-0"><i class="fas fa-user iconat"></i>
                             <div class="bg-user-down navbar-a p-3 ">
                                 <ul class=" user_down  list-unstyled">
-                                    <li><a class="dropdown-item px-2 py-2 user-item" href="<?= URLROOT; ?>/users/signin">Sign In</a></li>
-                                    <li><a class="dropdown-item px-2 py-2 user-item" href="<?= URLROOT; ?>/users/signup">Sign Up</a></li>
+                                    <?php if(isset($_SESSION['user_id'])): ?>
+                                        <li><a class="dropdown-item px-2 py-2 user-item" href="<?= URLROOT; ?>/profile/profile">profile</a></li>
+                                        <li><a class="dropdown-item px-2 py-2 user-item" href="<?= URLROOT; ?>/users/logout">logout</a></li>
+                                    <?php else :?>
+                                        <li><a class="dropdown-item px-2 py-2 user-item" href="<?= URLROOT; ?>/users/signin">Sign In</a></li>
+                                        <li><a class="dropdown-item px-2 py-2 user-item" href="<?= URLROOT; ?>/users/signup">Sign Up</a></li>
+                                    <?php endif ?>
                                 </ul>
                             </div>
                         </div>
@@ -61,7 +67,7 @@
                         <span class="fa fa-bars"></span>
                     </button>
                 </div>
-                <div class="offcanvas offcanvas-start w-75" tabindex="-1" id="offcanvasExample"
+                <div class="offcanvas offcanvas-start w-100" tabindex="-1" id="offcanvasExample"
                     aria-labelledby="offcanvasExampleLabel">
                     <div class="offcanvas-header">
                         <img class="w-25 image py-3" src="<?php echo URLROOT ?>/img/image/logo.png" alt="logo bidina">
@@ -69,8 +75,7 @@
                     </div>
                     <div class="offcanvas-body">
                         <div class="col p-lg-0 w-100">
-                            <ul
-                                class="items p-3 d-flex align-lg-items-center justify-content-start justify-content-lg-center flex-column flex-lg-row list-unstyled ">
+                            <ul class="items p-3 d-flex align-lg-items-center justify-content-start justify-content-lg-center flex-column flex-lg-row list-unstyled">
                                 <li class="item"><a href="#" class="nav-item nav-link navbar-a  list-inline text-light">Home</a></li>
                                 <li class="item"><a href="#" class="nav-item nav-link navbar-a  text-light">About Us</a></li>
                                 <li class="item nav-item dropdown ">
@@ -90,6 +95,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </nav>
     </header>

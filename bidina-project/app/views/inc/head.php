@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -14,5 +14,5 @@
   <link rel="stylesheet" href="<?= URLROOT; ?>/css/style.css">
   <title><?= SITENAME;?></title>
 </head>
-<body> -->
+<body> 
     
