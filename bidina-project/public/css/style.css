@@ -590,7 +590,7 @@ li.list-a a:hover {
 }
 .udme-b,
 .udme-a:hover {
-    background: #f4f5f8;
+    background: #b6b6b7 !important;
     color: #000;
 }
 

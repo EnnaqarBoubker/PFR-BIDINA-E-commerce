@@ -11,7 +11,6 @@ class Users extends Controller{
         // Check for POST
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // process form
-            // $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $data = [
                 'firstName' => trim(htmlspecialchars($_POST['firstName'])),
                 'lastName' => trim(htmlspecialchars($_POST['lastName'])),
@@ -91,7 +90,6 @@ class Users extends Controller{
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
                 // creat count signup
                if ( $this -> userModel -> signup($data)) {
-                    // flash('register_success', 'You are registered and can log in');
                     redirect('users/signin');
                }else{
                    echo 'something went wonrg';
@@ -193,8 +191,10 @@ class Users extends Controller{
     public function creatSessionUser($user)
     {
        $_SESSION['user_id'] = $user -> id; // the id came from model
+       $_SESSION['user_firstName'] = $user -> firstName;
+       $_SESSION['user_lastName'] = $user -> lastName;
        $_SESSION['user_email'] = $user -> email;
-       $_SESSION['user_password'] = $user -> password;
+       $_SESSION['user_phone'] = $user -> phone;
        redirect('pages/index');
     }
 

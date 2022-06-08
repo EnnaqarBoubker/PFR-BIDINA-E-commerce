@@ -1,18 +1,20 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
+<?php require APPROOT . '/views/inc/navbar.php'; ?>
 
 <section class="my-5" style="background-color: #eee;">
     <div class="container py-5">
-
         <div class="row">
             <div class="col-lg-4">
                 <div class="card mb-4">
                     <div class="card-body text-center">
                         <img src="<?= URLROOT; ?>/img/image-2/3519275.jpg" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                        <h5 class="my-3">John Smith</h5>
-                        <p class="text-muted mb-4">example@example.com</p>
+                        <!-- $$$$$$$$$$$$$$$$$$$$$$$$$  -->
+                        <?php foreach($data['data'] as $tab) { ?>
+                        <h5 class="my-3 text-capitalize"><?php echo $tab -> firstName . ' ' . $tab -> lastName ; ?></h5>
+                        <p class="text-muted mb-4"><?php echo $tab -> email; ?></p>
                         <div class="d-flex justify-content-center mb-2">
                             <button type="button" class="btn batin">Profile</button>
-                            <button type="button" class="btn ms-1" style="border: 1px solid #ee870d;">Edite Profile</button>
+                            <a href="<?= URLROOT; ?>/profile/editeProfile" type="button" class="btn ms-1" style="border: 1px solid #ee870d;">Edite Profile</a>
                         </div>
                     </div>
                 </div>
@@ -26,10 +28,19 @@
                         </div>
                         <div class="row p-2">
                             <div class="col-sm-3">
-                                <p class="mb-0">Full Name</p>
+                                <p class="mb-0 ">First Name</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">Johnatan Smith</p>
+                                <p class="text-muted mb-0 text-capitalize"><?php echo $tab -> firstName ; ?></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row p-2">
+                            <div class="col-sm-3">
+                                <p class="mb-0 ">Last Name</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0 text-capitalize"><?php echo $tab -> lastName ?></p>
                             </div>
                         </div>
                         <hr>
@@ -38,7 +49,7 @@
                                 <p class="mb-0">Email</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">example@example.com</p>
+                                <p class="text-muted mb-0"><?php echo $tab -> email ?></p>
                             </div>
                         </div>
                         <hr>
@@ -47,35 +58,19 @@
                                 <p class="mb-0">Phone</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0">(097) 234-5678</p>
+                                <p class="text-muted mb-0"><?php echo $tab -> phone ?></p>
                             </div>
                         </div>
                         <hr>
-                        <div class="row p-2">
-                            <div class="col-sm-3">
-                                <p class="mb-0">Mobile</p>
-                            </div>
-                            <div class="col-sm-9">
-                                <p class="text-muted mb-0">(098) 765-4321</p>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row p-2">
-                            <div class="col-sm-3">
-                                <p class="mb-0">Address</p>
-                            </div>
-                            <div class="col-sm-9">
-                                <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
+        <?php }; ?>
     </div>
+
+   
 </section>
-</div>
 
 
 <?php require_once APPROOT . "/views/inc/footerDash.php" ?>
