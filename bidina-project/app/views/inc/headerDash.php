@@ -21,20 +21,24 @@
                 
                 <div class="prof-dash text-white">
                     <img class="img-dash pb-3" src="<?= URLROOT ;?>/img/image-2/10909-612x612.jpg" alt="">
-                    <h3 class="pb-3">UserName</h3>
+                    <?php //foreach($data['data'] as $tab) : ?>
+                    <h3 class="pb-3">Boubker<?php    //var_dump($_SESSION['user_name']);  ?></h3>
                     <h5>Admin</h5>
+                    
                 </div>    
                 
                 <div class="list-group list-group-flush">
                     <ul class="list-unstyled ">
                         <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/dashboardAdmin/dashAdm"><i class="fas fa-tachometer-alt"></i>&emsp; Dashboard</a></li>
-                        <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/dashboardAdmin/dashProd"><i class="fab fa-product-hunt"></i>&emsp; Produit</a></li> 
+                        <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/dashAdmProd/dashProd"><i class="fab fa-product-hunt"></i>&emsp; Produit</a></li> 
                         <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/dashboardAdmin/dashAdmUse"><i class="fas fa-user-alt"></i>&emsp; User</a></li>
                         <li><a class="sid-dash nav nav-link align-middle" href="#"><i class="fas fa-money-bill"></i>&emsp; Earning</a></li>
                         <li><a class="sid-dash nav nav-link align-middle" href="#"><i class="fab fa-product-hunt"></i>&emsp; Commands</a></li> 
-
-                        <li><a class="sid-dash nav nav-link align-middle position-relative side" href="#"> Logout &emsp;<i class="fas fa-sign-out-alt"></i></a></li>
-                          
+                        <?php if(isset($_SESSION['user_id'])): ?>
+                        <li><a class="sid-dash nav nav-link align-middle position-relative side" href="<?= URLROOT; ?>/dashboardAdmin/logout"> Logout &emsp;<i class="fas fa-sign-out-alt"></i></a></li>
+                        <?php else :?>
+                            <li><a class="sid-dash nav nav-link align-middle position-relative side" href="<?= URLROOT; ?>/dashboardAdmin/dashIndex"> Logout &emsp;<i class="fas fa-sign-out-alt"></i></a></li>
+                        <?php endif; ?>
                     </ul>
 
                 </div>

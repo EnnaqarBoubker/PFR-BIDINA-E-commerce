@@ -15,7 +15,8 @@ class User
     public function signup($data)
     {
 
-        $this->db->query('INSERT INTO users (firstName, lastName, phone, email, password, confirm_password) VALUES (:firstName, :lastName, :phone, :email, :password, :confirm_password)');
+        $sql = 'INSERT INTO users (firstName, lastName, phone, email, password, confirm_password) VALUES (:firstName, :lastName, :phone, :email, :password, :confirm_password)';
+        $this->db->query($sql);
         // bind value
         $this->db->bind(':firstName', $data['firstName']);
         $this->db->bind(':lastName', $data['lastName']);

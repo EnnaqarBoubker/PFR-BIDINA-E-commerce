@@ -15,7 +15,6 @@ class Profile extends Controller
       'title' => 'formulaire Edite product',
     ];
 
-
     $data['data'] = $this -> userModel -> findUserByEmailAndReturnUserData($_SESSION['user_email']);
 
     $this->view('profile/profile', $data);

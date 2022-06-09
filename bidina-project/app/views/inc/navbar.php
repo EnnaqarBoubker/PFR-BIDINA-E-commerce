@@ -76,7 +76,7 @@
                     <div class="offcanvas-body">
                         <div class="col p-lg-0 w-100">
                             <ul class="items p-3 d-flex align-lg-items-center justify-content-start justify-content-lg-center flex-column flex-lg-row list-unstyled">
-                                <li class="item"><a href="#" class="nav-item nav-link navbar-a  list-inline text-light">Home</a></li>
+                                <li class="item"><a href="<?= URLROOT; ?>" class="nav-item nav-link navbar-a  list-inline text-light">Home</a></li>
                                 <li class="item"><a href="#" class="nav-item nav-link navbar-a  text-light">About Us</a></li>
                                 <li class="item nav-item dropdown ">
                                 <div class="fs-6 shop_button nav-item">Shop <i class="fas fa-angle-down ps-2 fs-5" style="top: 10px;"></i>

@@ -1,5 +1,7 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
-<?php require APPROOT . '/views/inc/navbar.php'; ?>
+<?php require APPROOT . '/views/inc/navbar.php'; 
+    // if(isset($_SESSION['']))
+?>
 
 <section class="my-5" style="background-color: #eee;">
     <div class="container py-5">
@@ -9,7 +11,7 @@
                     <div class="card-body text-center">
                         <img src="<?= URLROOT; ?>/img/image-2/3519275.jpg" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                         <!-- $$$$$$$$$$$$$$$$$$$$$$$$$  -->
-                        <?php foreach($data['data'] as $tab) { ?>
+                        <?php foreach($data['data'] as $tab ) :  ?>
                         <h5 class="my-3 text-capitalize"><?php echo $tab -> firstName . ' ' . $tab -> lastName ; ?></h5>
                         <p class="text-muted mb-4"><?php echo $tab -> email; ?></p>
                         <div class="d-flex justify-content-center mb-2">
@@ -66,7 +68,7 @@
                 </div>
             </div>
         </div>
-        <?php }; ?>
+        <?php endforeach;?>
     </div>
 
    
