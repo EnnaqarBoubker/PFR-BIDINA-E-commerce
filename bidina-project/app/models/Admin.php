@@ -31,7 +31,7 @@ class Admin {
          $this->db->query($sql);
          $this->db->bind(':email', $email);
  
-         $row = $this->db->single();
+          $this->db->single();
  
          if ($this->db->rowCount() > 0) {
              return true;
@@ -41,15 +41,12 @@ class Admin {
      }
 
      //Find admin by email. Email is passed in by the Controller.
-    public function findAdminByEmailAndReturnAdminData($email)
+    public function findAdminByEmailAndReturnAdminData($id)
     {
         //Prepared statement
-        $this->db->query('SELECT * FROM `admin` WHERE email = :email');
+        $this->db->query("SELECT * FROM `admin` WHERE email = '$id'");
 
-        //Email param will be binded with the email variable
-        $this->db->bind(':email', $email);
-
-        $res = $this->db->resultSet();
+        $res = $this->db-> single();
 
         return $res;
     }

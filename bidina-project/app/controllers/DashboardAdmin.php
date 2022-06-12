@@ -6,6 +6,7 @@ class DashboardAdmin extends Controller
     public function __construct()
     {
         $this -> adminModel = $this -> model('Admin');
+        $this -> userModel = $this -> model('user');
     }
 
     // public function dashIndex()
@@ -13,21 +14,26 @@ class DashboardAdmin extends Controller
     public function dashAdm()
     {
 
-        $data = [
-            'title' => 'dashAdmin',
-        ];
+        
 
-        $data['data'] = $this -> adminModel -> findAdminByEmailAndReturnAdminData($_SESSION['admin_email']);
-
-
+        
+         $admins = $this -> adminModel -> findAdminByEmailAndReturnAdminData($_SESSION['id']);
+       $data = [
+           'admins' => $admins,
+       ];
+        
         $this->view('dashboardAdmin/dashAdm', $data);
     }
 
+
+
+
     public function dashAdmUse()
     {
+        $posts = $this -> userModel -> getAllUsers();
 
         $data = [
-            'title' => 'dashboard Admin User',
+            'posts' => $posts,
         ];
 
         $this->view('dashboardAdmin/dashAdmUse', $data);

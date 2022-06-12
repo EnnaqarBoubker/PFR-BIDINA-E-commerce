@@ -11,12 +11,13 @@
                     <div class="card-body text-center">
                         <img src="<?= URLROOT; ?>/img/image-2/3519275.jpg" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                         <!-- $$$$$$$$$$$$$$$$$$$$$$$$$  -->
-                        <?php foreach($data['data'] as $tab ) :  ?>
+                        <?php foreach($data['posts'] as $tab ) :  ?>
                         <h5 class="my-3 text-capitalize"><?php echo $tab -> firstName . ' ' . $tab -> lastName ; ?></h5>
                         <p class="text-muted mb-4"><?php echo $tab -> email; ?></p>
                         <div class="d-flex justify-content-center mb-2">
+                            
                             <button type="button" class="btn batin">Profile</button>
-                            <a href="<?= URLROOT; ?>/profile/editeProfile" type="button" class="btn ms-1" style="border: 1px solid #ee870d;">Edite Profile</a>
+                            <a href="<?= URLROOT; ?>/profile/editeProfile/<?= $_SESSION['user_id'] ?>" type="button" class="btn ms-1" style="border: 1px solid #ee870d;">Edite Profile</a>
                         </div>
                     </div>
                 </div>

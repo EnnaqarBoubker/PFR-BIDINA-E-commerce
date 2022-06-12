@@ -10,6 +10,17 @@ class User
         $this->db = new Database;
     }
 
+
+    public function getAllUsers()
+    {
+        $this -> db -> query('SELECT* FROM users');
+
+        return $this -> db -> resultSet();
+    }
+
+
+
+
     // insert the donner input in the data
 
     public function signup($data)
@@ -65,6 +76,17 @@ class User
             return false;
         }
     }
+      // find user by id
+      public function gitUserById($id)
+      {
+          $sql = "SELECT * FROM users WHERE id = :id";
+          $this->db->query($sql);
+          $this->db->bind(':id', $id);
+  
+          $row = $this->db->single();
+  
+          return $row;
+      }
 
 
 
@@ -86,11 +108,10 @@ class User
 
 
 
-    public function editeProfile($data)
+    public function editeProfile($data, $id)
     {
-        $sql = 'UPDATE users SET firstName = :firstName ,lastName = :lastName ,email = :email ,phone = :phone WHERE id = :id';
+        $sql = "UPDATE users SET firstName = :firstName ,lastName = :lastName ,email = :email ,phone = :phone WHERE id = '$id'";
         $this->db->query($sql);
-        $this -> db -> bind(':id', $_SESSION['user_id']);
         $this -> db -> bind(':firstName', $data['firstName']);
         $this -> db -> bind(':lastName', $data['lastName']);
         $this -> db -> bind(':email', $data['email']);

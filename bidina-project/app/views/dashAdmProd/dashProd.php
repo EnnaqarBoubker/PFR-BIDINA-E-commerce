@@ -48,17 +48,17 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    foreach($data['data'] as $val) :
+                                    foreach($data['products'] as $product) :
                                 ?>
                               <tr>
                                 <td><img class="prod-dash" src="<?= URLROOT; ?>/img/image-2/75 (1).jpg" alt="produit-1"></td>
-                                <td><?php echo $val -> titre ?></td>
-                                <td><?php echo $val -> allPrix ?> <span class="fw-bold" style="font-size: 10px;">MAD</span></td>
-                                <td><?php echo $val -> sold ?> <span class="fw-bold" style="font-size: 10px;">MAD</span></td>
-                                <td><?php echo $val -> categoris ?></td>
+                                <td><?php echo $product -> titre ?></td>
+                                <td><?php echo $product -> allPrix ?> <span class="fw-bold" style="font-size: 10px;">MAD</span></td>
+                                <td><?php echo $product -> sold ?> <span class="fw-bold" style="font-size: 10px;">MAD</span></td>
+                                <td><?php echo $product -> categoris ?></td>
                                 <td>
-                                    <a href="<?= URLROOT; ?>/dashAdmProd/editeProd" class="fs-5 add text-decoration-none me-2" title="Edite"><i class="fas fa-edit"></i></a>
-                                    <a href="" class="fs-5 delete text-decoration-none" title="Delete"><i class="fas fa-backspace"></i></a>
+                                    <a href="<?= URLROOT; ?>/dashAdmProd/editeProd/<?php echo $product -> id_product ?>" class="fs-5 add text-decoration-none me-2" title="Edite"><i class="fas fa-edit"></i></a>
+                                    <a href="<?= URLROOT; ?>/dashAdmProd/delete/<?php echo $product -> id_product ?>" class="fs-5 delete text-decoration-none" title="Delete"><i class="fas fa-backspace"></i></a>
                                 </td>
                               </tr>
                               <?php endforeach; ?>

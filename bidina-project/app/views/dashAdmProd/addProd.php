@@ -2,7 +2,7 @@
 
 <div class="container p-4">
     <a href="<?= URLROOT;?>/dashAdmProd/dashProd" class="btn btn-sm btn-secondary mr-2 mb-4">
-        <i class="fas fa-home"></i>
+        <i class="fa fa-backward"></i> <span class="fs-6">Back</span>
     </a>
     <form method="post" action="<?= URLROOT; ?>/dashAdmProd/addProd">
         <!-- <div class="form-group mb-4">
