@@ -55,11 +55,11 @@
                         </div>
 
 
-
-                        <button class="btn border-0 position-relative" type="button">
+                        <!-- panier -->
+                        <a href="<?= URLROOT; ?>/pages/panier" class="btn border-0 position-relative" type="button">
                             <i class="fas fa-shopping-cart iconat"></i>
                             <span class="position-absolute top-0 translate-middle badge rounded-pill">1</span>
-                        </button>
+                         </a>
                     </div>
                 </div>
                 <div class="col d-lg-none d-block">

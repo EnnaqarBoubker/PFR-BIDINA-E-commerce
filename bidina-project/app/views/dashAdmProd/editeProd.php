@@ -4,7 +4,8 @@
     <a href="<?= URLROOT;?>/dashAdmProd/dashProd" class="btn btn-sm btn-secondary mr-2 mb-4">
         <i class="fas fa-home"></i>
     </a>
-    <form method="POST" action="<?= URLROOT; ?>/dashAdmProd/editeProd/<?= $data['id_product'] ?>">
+    
+    <form method="POST" action="<?= URLROOT; ?>/dashAdmProd/editeProd/<?= @$data['id_product'] ?>">
    
         <!-- <div class="form-group mb-4">
             <label for="formFile" class="form-label">Choise Img Product</label>

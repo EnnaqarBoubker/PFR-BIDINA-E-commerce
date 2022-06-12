@@ -25,7 +25,7 @@ class Admin {
     }
 
      // find user by email
-     public function findUserByEmail($email)
+     public function findAdminByEmail($email)
      {
          $sql = "SELECT * FROM `admin` WHERE email = :email";
          $this->db->query($sql);

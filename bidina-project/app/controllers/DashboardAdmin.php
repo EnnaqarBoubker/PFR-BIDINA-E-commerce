@@ -6,25 +6,34 @@ class DashboardAdmin extends Controller
     public function __construct()
     {
         $this -> adminModel = $this -> model('Admin');
-        $this -> userModel = $this -> model('user');
+        $this -> userModel = $this -> model('User');
     }
 
     // public function dashIndex()
 
     public function dashAdm()
     {
-
         
-
-        
-         $admins = $this -> adminModel -> findAdminByEmailAndReturnAdminData($_SESSION['id']);
+         
        $data = [
-           'admins' => $admins,
+           
        ];
         
         $this->view('dashboardAdmin/dashAdm', $data);
     }
 
+
+    // public function headerDash()
+    // {
+    //  $admins = $this -> adminModel -> findAdminByEmail($_SESSION['email']);
+    //  $data = [
+ 
+    //      'title' => 'header dashboard',
+    //      'admins' => $admins,
+    //  ];
+ 
+    //  $this -> view('inc/headerDash', $data);
+    // }
 
 
 
@@ -115,13 +124,13 @@ class DashboardAdmin extends Controller
             $this->view('dashboardAdmin/dashIndex', $data);
         }
     }
-         // the session makes server identify the information user;
-    public function creatSessionAdmin($user)
+         // the session makes server identify the information admin;
+    public function creatSessionAdmin($admin)
     {
-       $_SESSION['id_admin'] = $user -> id_admin; // the id came from model
-       $_SESSION['user_name'] = $user -> name;
-       $_SESSION['user_email'] = $user -> email;
-       $_SESSION['user_password'] = $user -> password;
+       $_SESSION['id_admin'] = $admin-> id; // the id came from model
+       $_SESSION['name'] = $admin-> name;
+       $_SESSION['email'] = $admin-> email;
+       $_SESSION['password'] = $admin-> password;
        
        redirect('dashboardAdmin/dashAdm');
     }

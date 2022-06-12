@@ -1,20 +1,25 @@
 <?php
   class Pages extends Controller {
+
     public function __construct(){
 
+      $this -> prodModel -> model('Products');
     }
 
     // methode the affichage index 
     public function index(){
 
-      $data = [
-        'title' => 'khalid',
-      ];
+  
+      $products = $this->prodModel->affichageProduct();
+      
+
+    $data = [
+      'products' => $products,
+    ];
+die(var_dump($products));
 
       $this -> view('pages/index', $data);
     }
-
- 
     
    
     public function panier(){

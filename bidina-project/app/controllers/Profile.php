@@ -204,6 +204,7 @@ class Profile extends Controller
 
    }else if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $data =  $_POST;
+      // die(var_dump($data));
       $this->userModel->editeProfile($data, $id);
       redirect('/profile/profile');
    }

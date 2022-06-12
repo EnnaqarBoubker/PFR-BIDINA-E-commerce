@@ -215,25 +215,6 @@ class DashAdmProd extends Controller
     }
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
 
   public function delete($id)

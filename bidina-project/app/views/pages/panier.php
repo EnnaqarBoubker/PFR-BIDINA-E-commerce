@@ -84,13 +84,13 @@
                     </form>
                     <?php }else{?>
                         <div class="text-center">
-                        <img src="<?php echo URLROOT; ?>public/img/panier.jpg" style="width: 400px;height: 400px;" class="image-center"> 
+                        <img src="<?php echo URLROOT; ?>/img/image-2/panier.jpg" style="width: 400px;height: 400px;" class="image-center"> 
                         <h3 class="text-center">panier est vide !</h3>  
                         <a href="<?php echo URLROOT; ?>" class="center"><button class="primary-btn add-to-cart">COMMENCEZ VOS ACHATS</button></a>
                         </div>
                         <?php }}else{?>
                         <div class="text-center">
-                        <img src="<?php echo URLROOT; ?>public/img/panier.jpg" style="width: 400px;height: 400px;" class="image-center"> 
+                        <img src="<?php echo URLROOT; ?>/img/imgage-2/panier.jpg" style="width: 400px;height: 400px;" class="image-center"> 
                         <h3 class="text-center">panier est vide !</h3>  
                         <a href="<?php echo URLROOT; ?>" class="center"><button class="primary-btn add-to-cart">COMMENCEZ VOS ACHATS</button></a>
                         </div>

@@ -120,6 +120,9 @@
     </div>
 
     <div class="row container-fluid">
+    <?php
+        foreach($data['products'] as $product) :
+    ?>
         <div class="col-md-3 col-sm-6">
             <div class="product-grid">
                 <div class="product-image">
@@ -145,8 +148,7 @@
                     </ul>
                 </div>
                 <div class="product-content">
-                    <h2 class="title"><a class="fw-bolder text-decoration-none" href="#">Women's T-Shirt</a>
-                    </h2>
+                    <h2 class="title">Women's T-Shirt</h2>
                     <div class="price">$77.99</div>
                     <button class="btn btn-secondary booton  d-block d-lg-none d-md-block"><a href="#"><i
                                 class="fas fa-shopping-cart"></i>
@@ -154,7 +156,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 col-sm-6">
+        <?php endforeach; ?>
+        <!-- <div class="col-md-3 col-sm-6">
             <div class="product-grid">
                 <div class="product-image">
                     <a href="#" class="image">
@@ -192,7 +195,7 @@
                         <img class="img-1" src="<?= URLROOT;?>/img/image/tables/75.jpg">
                     </a>
                     <ul class="product-links">
-                        <!-- <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li> -->
+                        <!-- <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li> --
                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
                         <li>
@@ -223,7 +226,7 @@
                         </div>
                     </a>
                     <ul class="product-links">
-                        <!-- <li><a href="#"></a></li> -->
+                        <!-- <li><a href="#"></a></li> --
                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
                         <li>
@@ -243,8 +246,8 @@
                             Add to Card</a></button>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
+        </div> -->
+        <!--<div class="col-md-3 col-sm-6">
             <div class="product-grid">
                 <div class="product-image">
                     <a href="#" class="image">
@@ -254,7 +257,7 @@
                         </div>
                     </a>
                     <ul class="product-links">
-                        <!-- <li><a href="#"></a></li> -->
+                         <li><a href="#"></a></li> 
                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
                         <li>
@@ -274,15 +277,15 @@
                             Add to Card</a></button>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
+        </div>-->
+        <!--<div class="col-md-3 col-sm-6">
             <div class="product-grid">
                 <div class="product-image">
                     <a href="#" class="image">
                         <img class="img-1" src="<?= URLROOT;?>/img/image/tables/75.jpg">
                     </a>
                     <ul class="product-links">
-                        <!-- <li><a href="#"></a></li> -->
+                         <li><a href="#"></a></li> 
                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
                         <li>
@@ -302,15 +305,15 @@
                             Add to Card</a></button>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
+        </div>-->
+        <!--<div class="col-md-3 col-sm-6">
             <div class="product-grid">
                 <div class="product-image">
                     <a href="#" class="image">
                         <img class="img-1" src="<?= URLROOT;?>/img/image/tables/75.jpg">
                     </a>
                     <ul class="product-links">
-                        <!-- <li><a href="#"></a></li> -->
+                         <li><a href="#"></a></li> 
                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
                         <li>
@@ -330,8 +333,8 @@
                             Add to Card</a></button>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
+        </div>-->
+        <!--<div class="col-md-3 col-sm-6">
             <div class="product-grid">
                 <div class="product-image">
                     <a href="#" class="image">
@@ -339,7 +342,7 @@
 
                     </a>
                     <ul class="product-links">
-                        <!-- <li><a href="#"></a></li> -->
+                         <li><a href="#"></a></li> 
                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
                         <li>
@@ -359,7 +362,7 @@
                             Add to Card</a></button>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 
 
