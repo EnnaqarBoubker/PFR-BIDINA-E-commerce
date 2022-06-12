@@ -21,9 +21,9 @@
                 
                 <div class="prof-dash text-white">
                     <img class="img-dash pb-3" src="<?= URLROOT ;?>/img/image-2/10909-612x612.jpg" alt="">
-                    <?php foreach($data['admins'] as $admin) : ?>
-                    <h3 class="pb-3"><?php die(var_dump($admin -> name)) ;  ?></h3>
-                    <?php endforeach ?>
+                    <?php //foreach($data['admins'] as $admin) : ?>
+                    <h3 class="pb-3">boubker<?php //die(var_dump($admin -> name)) ;  ?></h3>
+                    <?php //endforeach ?>
                     <h5>Admin</h5>
                 </div>    
                 

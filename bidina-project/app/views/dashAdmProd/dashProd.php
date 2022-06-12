@@ -42,8 +42,10 @@
                                 <th class="">Titre Produit</th>
                                 <th class="">All Price</th>
                                 <th class="">Sold</th>
+                                <th class="">Remise</th>
+                                <th class="">New</th>
                                 <th class="">categorises</th>
-                                <th class=""></th>
+                                <th class="">Action</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -55,6 +57,8 @@
                                 <td><?php echo $product -> titre ?></td>
                                 <td><?php echo $product -> allPrix ?> <span class="fw-bold" style="font-size: 10px;">MAD</span></td>
                                 <td><?php echo $product -> sold ?> <span class="fw-bold" style="font-size: 10px;">MAD</span></td>
+                                <td><?php echo $product -> remise ?> <span class="fw-bold" style="font-size: 10px;">%</span></td>
+                                <td><?php echo $product -> new ?></td>
                                 <td><?php echo $product -> categoris ?></td>
                                 <td>
                                     <a href="<?= URLROOT; ?>/dashAdmProd/editeProd/<?php echo $product -> id_product ?>" class="fs-5 add text-decoration-none me-2" title="Edite"><i class="fas fa-edit"></i></a>

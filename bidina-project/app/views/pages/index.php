@@ -130,8 +130,16 @@
                         <!-- <span class="badge bg-success">Success</span> -->
                         <img class="img-1" src="<?= URLROOT;?>/img/image/tables/75.jpg">
                         <div class="kiaa position-absolute">
-                            <span class="position-relative">-42%</span>
-                            <span class="position-relative new">New</span>
+                            <?php if(($product -> remise) == '0'){ ?>
+                                <span class="remise position-relative d-none"></span>
+                                <?php }else{ ?>
+                                    <span class="remise position-relative">-<?= $product -> remise ?>%</span>
+                            <?php } ?>
+                            <?php if(($product -> new) == 'new'){ ?>
+                              <span class="position-relative new"><?= $product -> new ?></span>
+                            <?php }else{ ?>
+                                <span class="position-relative new d-none"></span>
+                            <?php } ?>
                         </div>
                     </a>
                     <ul class="product-links">
@@ -148,8 +156,8 @@
                     </ul>
                 </div>
                 <div class="product-content">
-                    <h2 class="title">Women's T-Shirt</h2>
-                    <div class="price">$77.99</div>
+                    <h2 class="title"><?= $product -> titre ?></h2>
+                    <div class="price"><?= $product -> sold ?> MAD &emsp;<del class="text-secondary"><?= $product -> allPrix ?></del> MAD</div>
                     <button class="btn btn-secondary booton  d-block d-lg-none d-md-block"><a href="#"><i
                                 class="fas fa-shopping-cart"></i>
                             Add to Card</a></button>

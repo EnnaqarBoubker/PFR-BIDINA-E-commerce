@@ -31,6 +31,8 @@ class DashAdmProd extends Controller
         'titre' => trim(htmlspecialchars($_POST['titre'])),
         'sold' => trim(htmlspecialchars($_POST['sold'])),
         'allPrix' => trim(htmlspecialchars($_POST['allPrix'])),
+        'remise' => trim(htmlspecialchars($_POST['remise'])),
+        'new' => trim(htmlspecialchars($_POST['new'])),
         'categoris' => trim(htmlspecialchars($_POST['categoris'])),
         // 'prod_id' => $_SESSION['id_product'],
         'error_titre' => '',
@@ -39,7 +41,7 @@ class DashAdmProd extends Controller
         'error_categoris' => '',
       ];
 
-      $validationPrix = "/^[0-9]*$/";
+      $validationPrix = "/^\d{0,8}(\.\d{1,4})?$/";
       $validationTitre =  "/^[a-zA-Z' ]*$/";
 
       //validation the titre product
@@ -84,6 +86,8 @@ class DashAdmProd extends Controller
         'titre' => '',
         'sold' => '',
         'allPrix' => '',
+        'remise' => '',
+        'new' => '',
         'error_titre' => '',
         'error_sold' => '',
         'error_allPrix' => '',
@@ -181,6 +185,8 @@ class DashAdmProd extends Controller
         'sold' => trim(htmlspecialchars($_POST['sold'])),
         'allPrix' => trim(htmlspecialchars($_POST['allPrix'])),
         'categoris' => trim(htmlspecialchars($_POST['categoris'])),
+        'remise' => trim(htmlspecialchars($_POST['remise'])),
+        'new' => trim(htmlspecialchars($_POST['new'])),
         'error_titre' => '',
         'error_sold' => '',
         'error_allPrix' => '',
@@ -206,6 +212,8 @@ class DashAdmProd extends Controller
           'titre' => '',
           'sold' => '',
           'allPrix' => '',
+          'remise' => '',
+          'new' => '',
           'categoris' => '',
           'error_titre' => '',
           'error_sold' => '',
@@ -224,7 +232,7 @@ class DashAdmProd extends Controller
       $data =  $this->prodModel->getprodById($id);
       // Check for owner
       if ($data['id'] != $_SESSION['id_product']) {
-
+        
         redirect('/dashAdmProd/dashProd');
       }
       if ($this->prodModel->deleteProduct($id)) {

@@ -27,6 +27,19 @@
             <span class="invalid-feedback"><?= $data['error_allPrix'] ?></span>
         </div>
         <div class="form-group mb-4">
+            <label for="remise">Remise*</label>
+            <input type="text" name="remise"  placeholder="All Price" class="form-control <?= (!empty($data['error_remise'])) ? 'is-invalid' : ''; ?>"  value="<?= $data['remise'];?>">
+            <span class="invalid-feedback"><?= $data['error_remise'] ?></span>
+        </div>
+        <div class="form-group mb-4">
+            <label>New</label>
+            <select class="form-control" name="new">
+                <option value="<?= $data['new'];?>"><?= $data['new']; ?></option>
+                <option value="new">New</option>
+                <option value="old">Old</option>
+            </select>
+        </div>
+        <div class="form-group mb-4">
             <label>Categoris*</label>
             <select class="form-control" name="categoris">
                 <option value="<?= $data['categoris'];?>"><?= $data['categoris']; ?></option>

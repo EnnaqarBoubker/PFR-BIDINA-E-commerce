@@ -3,7 +3,7 @@
 
     public function __construct(){
 
-      $this -> prodModel -> model('Products');
+       $this -> prodModel = $this -> model('Products');
     }
 
     // methode the affichage index 
@@ -16,7 +16,7 @@
     $data = [
       'products' => $products,
     ];
-die(var_dump($products));
+    
 
       $this -> view('pages/index', $data);
     }

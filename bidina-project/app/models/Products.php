@@ -19,11 +19,13 @@ class Products {
 
     public function addProduct($data)
     {
-        $sql = 'INSERT INTO `products` (`titre`, `sold`, `allPrix`, `categoris`) VALUES (:titre, :sold, :allPrix, :categoris)';
+        $sql = 'INSERT INTO `products` (`titre`, `sold`, `allPrix`, `categoris`, remise, new) VALUES (:titre, :sold, :allPrix, :categoris, :remise, :new)';
         $this -> db -> query($sql);
         $this -> db -> bind(':titre', $data['titre']);
         $this -> db -> bind(':sold', $data['sold']);
         $this -> db -> bind(':allPrix', $data['allPrix']);
+        $this -> db -> bind(':remise', $data['remise']);
+        $this -> db -> bind(':new', $data['new']);
         $this -> db -> bind(':categoris', $data['categoris']);
 
         // Execute
@@ -36,11 +38,13 @@ class Products {
 
     public function editeProduct($data,$id)
     {
-        $sql = "UPDATE products SET titre = :titre ,sold = :sold, allPrix = :allPrix, categoris = :categoris WHERE id_product = '$id'";
+        $sql = "UPDATE products SET titre = :titre ,sold = :sold, allPrix = :allPrix, categoris = :categoris, remise = :remise, new = :new WHERE id_product = '$id'";
         $this->db->query($sql);
         // $this -> db -> bind(':id', $data['id']);
         $this -> db -> bind(':titre', $data['titre']);
         $this -> db -> bind(':sold', $data['sold']);
+        $this -> db -> bind(':remise', $data['remise']);
+        $this -> db -> bind(':new', $data['new']);
         $this -> db -> bind(':allPrix', $data['allPrix']);
         $this -> db -> bind(':categoris', $data['categoris']);
 
