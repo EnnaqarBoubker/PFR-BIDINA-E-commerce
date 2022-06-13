@@ -12,19 +12,31 @@ class DashAdmProd extends Controller
   {
 
     $products = $this->prodModel->affichageProduct();
+    $categoris = $this->prodModel->countProdByCategoris('table');
+    $categoris1 = $this->prodModel->countProdByCategoris('poufs');
+    $categoris2 = $this->prodModel->countProdByCategoris('Bibliothéque');
+    $categoris3 = $this->prodModel->countProdByCategoris('soucle');
+    $categoris4 = $this->prodModel->countProdByCategoris('Chair');
+    
+    // die(var_dump($categoris));
+    // exit;
 
     $data = [
       'products' => $products,
+      'categoris'=> $categoris,
+      'categoris1'=> $categoris1,
+      'categoris2'=> $categoris2,
+      'categoris3'=> $categoris3,
+      'categoris4'=> $categoris4
     ];
 
-    $this->view('dashAdmProd/dashProd', $data);
+    $this->view('dashAdmProd/dashProd',$data);
   }
-
-
 
 
   public function addProd()
   {
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
       $data = [
@@ -34,12 +46,18 @@ class DashAdmProd extends Controller
         'remise' => trim(htmlspecialchars($_POST['remise'])),
         'new' => trim(htmlspecialchars($_POST['new'])),
         'categoris' => trim(htmlspecialchars($_POST['categoris'])),
-        // 'prod_id' => $_SESSION['id_product'],
+        'img' => ($_FILES['img']['name']),
+        'prod_id' => $_SESSION['id_product'],
         'error_titre' => '',
         'error_sold' => '',
         'error_allPrix' => '',
         'error_categoris' => '',
+
       ];
+
+      $terget = dirname(APPROOT) . "/public/img/imgProducts/" . $_FILES['img']['name'];
+      move_uploaded_file($_FILES['img']['tmp_name'], $terget);
+
 
       $validationPrix = "/^\d{0,8}(\.\d{1,4})?$/";
       $validationTitre =  "/^[a-zA-Z' ]*$/";
@@ -97,89 +115,36 @@ class DashAdmProd extends Controller
   }
 
 
-
-  // public function editeProd($id)
-  // {
-
-  //   if($_SERVER['REQUEST_METHOD'] == 'GET'){
-
-  //      $product = $this -> prodModel -> getprodById($id);
-
-  //         $this->view('dashAdmProd/editeProd', (array)$product);
-
-  //  }elseif($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-  //     $data = [
-  //       'titre' => trim(htmlspecialchars($_POST['titre'])),
-  //       'sold' => trim(htmlspecialchars($_POST['sold'])),
-  //       'allPrix' => trim(htmlspecialchars($_POST['allPrix'])),
-  //       'categoris' => trim(htmlspecialchars($_POST['categoris'])),
-  //       'error_titre' => '',
-  //       'error_sold' => '',
-  //       'error_allPrix' => '',
-  //       'error_categoris' => '',
-  //     ];
-
-  //     $validationPrix = "/^[0-9]*$/";
-  //     $validationTitre = "/^(?!0\d)\d*(\.\d+)?$/";
-
-  //     //validation the titre product
-  //     if (empty($data['titre'])) {
-  //       $data['error_titre'] = 'Enter title product';
-  //     }
-
-  //     //validation the sold product
-  //     if (empty($data['sold'])) {
-  //       $data['error_sold'] = 'Enter Sold product';
-  //     } elseif (!preg_match($validationPrix, $data['sold'])) {
-  //       $data['error_sold'] = 'Sold can only contain letters';
-  //     }
-
-  //     //validation the allPrix product
-  //     if (empty($data['allPrix'])) {
-  //       $data['error_allPrix'] = 'Enter title product';
-  //     } elseif ($data['sold'] > $data['allPrix']) {
-  //       $data['error_allPrix'] = 'allPrix can only contain letters';
-  //     }
-
-
-  //     // Make sure errors are empty
-  //     if (empty($data['error_titre']) && empty($data['error_sold']) && empty($data['error_allPrix'])) {
-  //       // function edite Product
-
-  //       $data = $this->prodModel->editeProduct($data, $id);
-
-  //       if($data){
-  //         redirect('/dashAdmProd/dashProd');
-  //       }else{
-  //         die('Something went wrong');
-  //       }
-  //     } else {
-
-  //       $data = [
-  //         'id' => $_SESSION['prod_id'],
-  //         'titre' => '',
-  //         'sold' =>'',
-  //         'allPrix' => '',
-  //         'categoris' => '',
-  //         'prod_id' => '',
-  //         'error_titre' => '',
-  //         'error_sold' => '',
-  //         'error_allPrix' => '',
-  //         'error_categoris' => '',
-  //       ];
-
-  //       $this->view('dashAdmProd/editeProd',$data);
-  //     }
-  //   }
+ 
 
 
   public function editeProd($id)
   {
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
       $product = $this->prodModel->getprodById($id);
+
+      $_SESSION['img'] = $product->img;
+      //  echo $_SESSION['img'];
+      //  exit;
       $this->view('dashAdmProd/editeProd', (array) $product);
+
+
     } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+      if (!empty($_FILES['img']['name'])) {
+
+        $img = $_FILES['img']['name'];
+
+
+        if (file_exists(dirname(APPROOT) . '/public/img/imgProducts/' . $_SESSION['img'])) {
+          unlink(dirname(APPROOT) . '/public/img/imgProducts/' . $_SESSION['img']);
+        }
+        $_SESSION['img'] = $img;
+        $terget = dirname(APPROOT) . "/public/img/imgProducts/" . $_FILES['img']['name'];
+        move_uploaded_file($_FILES['img']['tmp_name'], $terget);
+      }
+
+
       $data = [
         'titre' => trim(htmlspecialchars($_POST['titre'])),
         'sold' => trim(htmlspecialchars($_POST['sold'])),
@@ -187,6 +152,7 @@ class DashAdmProd extends Controller
         'categoris' => trim(htmlspecialchars($_POST['categoris'])),
         'remise' => trim(htmlspecialchars($_POST['remise'])),
         'new' => trim(htmlspecialchars($_POST['new'])),
+        'img' => $_SESSION['img'],
         'error_titre' => '',
         'error_sold' => '',
         'error_allPrix' => '',
@@ -202,7 +168,7 @@ class DashAdmProd extends Controller
       }
 
       if (empty($data['error_titre']) && empty($data['error_sold']) && empty($data['error_allPrix'])) {
-        $data =  $_POST;
+        // $data =  $_POST;
         if ($this->prodModel->editeProduct($data, $id)) {
           redirect('/dashAdmProd/dashProd');
         }
@@ -214,6 +180,7 @@ class DashAdmProd extends Controller
           'allPrix' => '',
           'remise' => '',
           'new' => '',
+          'img' => '',
           'categoris' => '',
           'error_titre' => '',
           'error_sold' => '',
@@ -223,26 +190,20 @@ class DashAdmProd extends Controller
     }
   }
 
-  
-
-  public function delete($id)
+  //creat method delete product by id
+  public function deleteProd($id)
   {
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-      // Get existing post from model
-      $data =  $this->prodModel->getprodById($id);
-      // Check for owner
-      if ($data['id'] != $_SESSION['id_product']) {
-        
-        redirect('/dashAdmProd/dashProd');
-      }
-      if ($this->prodModel->deleteProduct($id)) {
-        redirect('/dashAdmProd/dashProd');
-      } else {
-        die('Something went wrong');
-      }
+    if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+      $this->prodModel->getprodById($id);
+      $this->prodModel->deleteProduct($id);
+      redirect('/dashAdmProd/dashProd');
     } else {
-      echo 'is wrong';
-      // redirect('/dashAdmProd/dashProd');;
+      die('Something went wrong');
     }
   }
+
+
+
+
+
 }

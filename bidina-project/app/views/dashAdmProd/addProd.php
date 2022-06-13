@@ -4,12 +4,11 @@
     <a href="<?= URLROOT;?>/dashAdmProd/dashProd" class="btn btn-sm btn-secondary mr-2 mb-4">
         <i class="fa fa-backward"></i> <span class="fs-6">Back</span>
     </a>
-    <form method="post" action="<?= URLROOT; ?>/dashAdmProd/addProd">
-        <!-- <div class="form-group mb-4">
+    <form method="post" action="<?= URLROOT; ?>/dashAdmProd/addProd" enctype="multipart/form-data"> 
+        <div class="form-group mb-4">
             <label for="formFile" class="form-label">Choise Img Product</label>
-            <input  type="file" id="formFile" class="form-control <?php //(!empty($data['error_titre'])) ? 'is-invalid' : ''; ?>"  value="<?php // $data['titre'];?>">
-            
-        </div> -->
+            <input  type="file" id="formFile" name="img" class="form-control <?php //(!empty($data['error_titre'])) ? 'is-invalid' : ''; ?>"  value="<?php // $data['titre'];?>">
+        </div>
         <div class="form-group mb-4">
             <label for="titre">Title Product*</label>
             <input type="text" name="titre"  placeholder="Title Product" class="form-control <?= (!empty($data['error_titre'])) ? 'is-invalid' : ''; ?>"  value="<?= $data['titre'];?>">
@@ -44,6 +43,7 @@
                 <option value="Chair">Chair</option>
                 <option value="Poufs">Poufs</option>
                 <option value="Bibliothéque">Biblioteque</option>
+                <option value="soucle">Soucle</option>
             </select>
         </div>
         <div class="form-group">

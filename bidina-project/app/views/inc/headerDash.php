@@ -22,7 +22,7 @@
                 <div class="prof-dash text-white">
                     <img class="img-dash pb-3" src="<?= URLROOT ;?>/img/image-2/10909-612x612.jpg" alt="">
                     <?php //foreach($data['admins'] as $admin) : ?>
-                    <h3 class="pb-3">boubker<?php //die(var_dump($admin -> name)) ;  ?></h3>
+                    <h3 class="pb-3"><?php echo $_SESSION['admin_name'] ?? 'baker' ;  ?></h3>
                     <?php //endforeach ?>
                     <h5>Admin</h5>
                 </div>    
@@ -37,7 +37,7 @@
                         <?php if(isset($_SESSION['user_id'])): ?>
                         <li><a class="sid-dash nav nav-link align-middle position-relative side" href="<?= URLROOT; ?>/dashboardAdmin/logout"> Logout &emsp;<i class="fas fa-sign-out-alt"></i></a></li>
                         <?php else :?>
-                            <li><a class="sid-dash nav nav-link align-middle position-relative side" href="<?= URLROOT; ?>/dashboardAdmin/dashIndex"> Logout &emsp;<i class="fas fa-sign-out-alt"></i></a></li>
+                            <li><a class="sid-dash nav nav-link align-middle position-relative side" href="<?= URLROOT; ?>/dashboardAdmin/signin"> Logout &emsp;<i class="fas fa-sign-out-alt"></i></a></li>
                         <?php endif; ?>
                     </ul>
 

@@ -10,7 +10,7 @@
     public function index(){
 
   
-      $products = $this->prodModel->affichageProduct();
+      $products = $this->prodModel->affichageProductLimit();
       
 
     $data = [
@@ -19,6 +19,34 @@
     
 
       $this -> view('pages/index', $data);
+    }
+//method affiche le detaille d'un produit
+    public function productDet(){
+
+      // $this->prodModel->getprodById($_GET['id']);
+      $products = $this->prodModel->affichageProduct();
+      
+
+    $data = [
+      'products' => $products,
+    ];
+    
+
+      $this -> view('pages/productDet', $data);
+    }
+
+    public function viewAll(){
+
+  
+      $products = $this->prodModel->affichageProduct();
+      
+
+    $data = [
+      'products' => $products,
+    ];
+    
+
+      $this -> view('pages/viewAll', $data);
     }
     
    

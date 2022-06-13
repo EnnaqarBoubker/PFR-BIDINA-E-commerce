@@ -5,12 +5,12 @@
         <i class="fas fa-home"></i>
     </a>
     
-    <form method="POST" action="<?= URLROOT; ?>/dashAdmProd/editeProd/<?= @$data['id_product'] ?>">
+    <form method="POST" action="<?= URLROOT; ?>/dashAdmProd/editeProd/<?= @$data['id_product']?>" enctype="multipart/form-data">
    
-        <!-- <div class="form-group mb-4">
+        <div class="form-group mb-4">
             <label for="formFile" class="form-label">Choise Img Product</label>
-            <input  type="file" id="formFile" class="form-control">
-        </div> -->
+            <input  type="file" id="formFile"name="img" class="form-control">
+        </div>
         <div class="form-group mb-4">
             <label for="titre">Title Product*</label>
             <input type="text" name="titre"  placeholder="Title Product" class="form-control <?= (!empty($data['error_titre'])) ? 'is-invalid' : ''; ?>"  value="<?php echo $data['titre'] ;?>">
@@ -47,6 +47,7 @@
                 <option value="Chair">Chair</option>
                 <option value="Poufs">Poufs</option>
                 <option value="Bibliotéques">Biblioteque</option>
+                <option value="soucle">Soucle</option>
             </select>
         </div>
         <div class="form-group">

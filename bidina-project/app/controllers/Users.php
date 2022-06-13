@@ -83,7 +83,6 @@ class Users extends Controller{
                     $data['confirm_password_err'] = 'Password is not match';
                 }
             }
-
             // Make sure errors are empty
             if(empty($data['firstName_err']) && empty($data['lastName_err']) && empty($data['email_err']) && empty($data['phone_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])){
                 //hash password

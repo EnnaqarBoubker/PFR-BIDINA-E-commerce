@@ -9,22 +9,42 @@ class Admin {
         $this -> db = new Database;
     }
 
-    public function signin($email, $password)
-    {
-        $sql = 'SELECT * FROM `admin` WHERE email = :email and password = :password' ;
-        $this->db->query($sql);
-        $this->db->bind(':email', $email);
-        $this->db->bind(':password', $password);
-        $row = $this->db->single();
+    // public function signin($email, $password)
+    // {
 
-        if (!empty($row)) {
-            return $row;
-        }else{
-            return false;
-        }
-    }
+    //     $sql = "SELECT * FROM `admin` WHERE email = $email and password = $password" ;
+    //     $this->db->query($sql);
 
-     // find user by email
+    //     // $this->db->bind(':email', $email);
+    //     // $this->db->bind(':password', $password);
+
+    //     var_dump($this->db->single());
+    //     exit;
+    //     if (!empty($row)) {
+    //         return $row;
+    //     }else{
+    //         return false;
+    //     }
+    // }
+    //creat methode signin
+    // public function signin($email, $password){
+    //     $this->db->query("SELECT * FROM `admin` WHERE email = :email and password = :password");
+    //     $this->db->bind(':email', $email);
+    //     $this->db->bind(':password', $password);
+
+    //    $this->db->execute();
+    //     $row = $this->db->resultSet();
+    //     var_dump($row);
+    //     exit;
+
+    //     if (!empty($row)) {
+    //         return $row;
+    //     }else{
+    //         return false;
+    //     }
+    // }
+
+     // find user by email            
      public function findAdminByEmail($email)
      {
          $sql = "SELECT * FROM `admin` WHERE email = :email";

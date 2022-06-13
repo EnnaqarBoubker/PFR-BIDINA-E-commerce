@@ -215,6 +215,7 @@ button.btn.btn-secondary.batn a{
     color: rgb(0, 0, 0);
     text-decoration: none;
     /* margin-left: 5px; */
+    font-size: 13px !important;
     
 }
 button.btn.btn-secondary.batn a:hover{
@@ -336,7 +337,11 @@ button.btn.btn-secondary.batn a:hover{
 
 }
 
-
+a.batin.view-all.p-3.border-0.text-light {
+    text-align: center;
+    width: 10rem;
+    margin: 0 auto;
+}
 
 
 .kiaa{
@@ -418,7 +423,7 @@ span.position-relative.new {
 }
 .product-grid .product-links li a{
     color: #020202;
-    font-size: 18px;
+    font-size: 10px;
     transition: all .3s;
     border: 1px solid;
     padding: 12px;
