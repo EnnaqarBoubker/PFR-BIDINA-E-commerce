@@ -47,7 +47,7 @@ class DashAdmProd extends Controller
         'new' => trim(htmlspecialchars($_POST['new'])),
         'categoris' => trim(htmlspecialchars($_POST['categoris'])),
         'img' => ($_FILES['img']['name']),
-        'prod_id' => $_SESSION['id_product'],
+        // 'prod_id' => $_SESSION['id_product'],
         'error_titre' => '',
         'error_sold' => '',
         'error_allPrix' => '',

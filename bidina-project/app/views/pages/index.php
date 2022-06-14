@@ -152,7 +152,7 @@
                         </div>
                         <div class="product-content">
                             <h2 class="title"><?= $product->titre ?></h2>
-                            <div class="price"><?= $product->sold ?> MAD &emsp;<del class="text-secondary"><?= $product->allPrix ?></del> MAD</div>
+                            <div class="price"><?= $product->sold ?> Dhs &emsp;<del class="text-secondary"><?= $product->allPrix ?></del> Dhs</div>
                             <button class="btn btn-secondary booton  d-block d-lg-none d-md-block"><a href="#"><i class="fas fa-shopping-cart"></i>
                                     Add to Card</a></button>
                         </div>

@@ -124,4 +124,6 @@ class User
             return false;
         }
     }
+
+    // creat function get user count
 }

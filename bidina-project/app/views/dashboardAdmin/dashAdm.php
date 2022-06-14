@@ -13,7 +13,7 @@
                                         <h5 class="pt-3">Produits</h5>
                                     </div>
                                     <div class="categ-rr">
-                                        <h6 class="float-end fs-4">4</h6>
+                                        <h6 class="float-end fs-4"><?= $data['products']?></h6>
                                     </div>
                                 </div>
                             </div>

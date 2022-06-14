@@ -74,8 +74,10 @@ class Products {
         $this->db->bind(':id', $id);
   
         $row = $this->db->single();
+        
   
         return $row;
+        
     }
 
 
@@ -103,5 +105,13 @@ class Products {
     return $result[0]->produit;
   }
    
+  // creat function get count all product
+    public function countAllProd()
+    {
+        $sql = "SELECT COUNT(*) AS produit FROM products";
+        $this->db->query($sql);
+        $result = $this->db->resultSet();
+        return $result[0]->produit;
+    }
 
 }

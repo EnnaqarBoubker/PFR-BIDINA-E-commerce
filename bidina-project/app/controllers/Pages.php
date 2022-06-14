@@ -21,18 +21,13 @@
       $this -> view('pages/index', $data);
     }
 //method affiche le detaille d'un produit
-    public function productDet(){
+    public function productDet($id){
 
       // $this->prodModel->getprodById($_GET['id']);
-      $products = $this->prodModel->affichageProduct();
-      
-
-    $data = [
-      'products' => $products,
-    ];
+      $data = $this->prodModel->getprodById($id);
     
-
       $this -> view('pages/productDet', $data);
+
     }
 
     public function viewAll(){
