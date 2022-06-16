@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
     <div class="titl d-flex justify-content-between align-items-center">
-        <h2 class="my-4 ">Table User</h2>
+        <h2 class="my-4 ">ALL Messages</h2>
     </div>
 
     <section>
@@ -12,9 +12,10 @@
                     <div class="card" style="width: 16rem; border: 1px solid #ee870d;">
                         <div class="card-body">
                             <ul class="list-unstyled text-center fw-bold">
-                                <li class="mb-2"><?php echo $post->firstName . ' ' . $post->lastName; ?></li>
-                                <li class="mb-2"><?php echo $post->email; ?></li>
-                                <li class="mb-2"><?php echo $post->phone; ?></li>
+                                <li class="mb-2"><span class="float-start" style="color: #ff750d; font-size: 12px;">Name&emsp;&emsp;</span><?php echo $post->name; ?></li>
+                                <li class="mb-2"><span class="float-start" style="color: #ff750d; font-size: 12px;">Subject&emsp;&emsp;</span><?php echo $post->subject; ?></li>
+                                <li class="mb-2"><span class="float-start" style="color: #ff750d; font-size: 12px;">Email&emsp;&emsp;</span><?php echo $post->email; ?></li>
+                                <li class="mb-2"><span class="float-start" style="color: #ff750d; font-size: 12px;">Message&emsp;&emsp;</span><?php echo $post->message; ?></li>
                             </ul>
                         </div>
                     </div>
@@ -23,5 +24,5 @@
         </div>
     </section>
 </div>
-
+        
 <?php require_once APPROOT . "/views/inc/footerDash.php"; ?>

@@ -90,7 +90,7 @@
                                 </div>
                                 </li>
                                 <li class="item"><a href="#" class="nav-item nav-link navbar-a  text-light">Blogs</a></li>
-                                <li> <a href="#" class="nav-item nav-link navbar-a  text-light">Contact Us</a></li>
+                                <li> <a href="<?= URLROOT; ?>/pages/contact" class="nav-item nav-link navbar-a  text-light">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>

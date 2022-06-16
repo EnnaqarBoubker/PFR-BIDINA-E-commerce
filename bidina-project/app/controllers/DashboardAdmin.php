@@ -8,6 +8,18 @@ class DashboardAdmin extends Controller
         $this->adminModel = $this->model('Admin');
         $this->userModel = $this->model('User');
         $this->prodModel = $this->model('Products');
+
+    // creat condition check if admin is loggedin 
+    // if not redirect to login page
+    // if (isset($_SESSION['admin_id'])) {
+    //     if ($_SESSION['admin_id'] == 0) {
+    //         redirect('dashboardAdmin/signin');
+    //     }
+    // } else {
+    //     redirect('dashboardAdmin/signin');
+    // }
+    
+    
     }
 
 
@@ -15,9 +27,11 @@ class DashboardAdmin extends Controller
     public function dashAdm()
     {
         $products = $this->prodModel->countAllProd();
-        
+        $users = $this->userModel->countAllUser();
+
         $data = [
             'products' => $products,
+            'users' => $users,
         ];
 
         $this->view('dashboardAdmin/dashAdm', $data);
@@ -59,32 +73,29 @@ class DashboardAdmin extends Controller
             // validate password input
             if (empty($data['password'])) {
                 $data['password_err'] = 'Enter your password';
-            }
-
-            // Check for user/email
-            if ($this->adminModel->findAdminByEmail($data['email'])) {
-                redirect('dashboardAdmin/dashAdm');
-            } else {
-                $data['password_err'] = 'Password is incorrect';
-            }
-
+            } 
+            
             // Make sure errors are empty
             if (empty($data['email_err']) && empty($data['password_err'])) {
-                // Validated
-                $logined = $this->adminModel->signin($data['email'], $data['password']);
-                if ($logined) {
-                    // creat session var
-                    $this->creatSessionAdmin($logined);
-                    var_dump($logined);
-                    exit;
+
+
+            $loggedIn = $this->adminModel->signin($data['email'], $data['password']);
+        //    echo 'lihihoh';
+        
+
+                if ($loggedIn) {
+                    $this->creatSessionAdmin($loggedIn);
+                    redirect('dashboardAdmin/dashAdm');
                 } else {
-                    $data['password_err'] = 'Password incorrect';
-                    $this->view('dashboardAdmin/dashAdm', $data);
+                    $_SESSION['admin_email'] = $data['email'];
+                    redirect('dashboardAdmin/dashAdm');
                 }
             } else {
-                // Load view with errors
+                $data['password_err'] = 'Password or email is incorrect. Please try again.';
+
                 $this->view('dashboardAdmin/signin', $data);
-            }
+            } 
+            
         } else {
             $data = [
                 'email' => '',
@@ -100,21 +111,36 @@ class DashboardAdmin extends Controller
     //creat session admin
     public function creatSessionAdmin($admin)
     {
-        $_SESSION['admin_id'] = $admin->id;
+        $_SESSION['admin_id'] = $admin->id_admin;
         $_SESSION['admin_name'] = $admin->name;
         $_SESSION['admin_email'] = $admin->email;
+        $_SESSION['admin_password'] = $admin->password;
         redirect('dashboardAdmin/dashAdm');
     }
 
     public function logout()
     {
         unset($_SESSION['id_admin']);
-        unset($_SESSION['name']);
-        unset($_SESSION['email']);
-        unset($_SESSION['password']);
+        unset($_SESSION['admin_name']);
+        unset($_SESSION['admin_email']);
+        unset($_SESSION['admin_password']);
 
         session_destroy();
 
         redirect('dashboardAdmin/signin');
     }
+
+
+    //creat function message from user
+    public function message()
+    {
+        $posts = $this->userModel->getAllMessage();
+
+        $data = [
+            'posts' => $posts,
+        ];
+
+        $this->view('dashboardAdmin/message', $data);
+    }
+    
 }

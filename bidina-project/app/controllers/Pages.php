@@ -1,59 +1,139 @@
 <?php
-  class Pages extends Controller {
+class Pages extends Controller
+{
 
-    public function __construct(){
+  public function __construct()
+  {
 
-       $this -> prodModel = $this -> model('Products');
-    }
+    $this->prodModel = $this->model('Products');
+    $this->userModel = $this->model('User');
+  }
 
-    // methode the affichage index 
-    public function index(){
+  // methode the affichage index 
+  public function index()
+  {
 
-  
-      $products = $this->prodModel->affichageProductLimit();
-      
 
-    $data = [
-      'products' => $products,
-    ];
-    
+    $products = $this->prodModel->affichageProductLimit();
 
-      $this -> view('pages/index', $data);
-    }
-//method affiche le detaille d'un produit
-    public function productDet($id){
-
-      // $this->prodModel->getprodById($_GET['id']);
-      $data = $this->prodModel->getprodById($id);
-    
-      $this -> view('pages/productDet', $data);
-
-    }
-
-    public function viewAll(){
-
-  
-      $products = $this->prodModel->affichageProduct();
-      
 
     $data = [
       'products' => $products,
     ];
-    
 
-      $this -> view('pages/viewAll', $data);
-    }
-    
-   
-    public function panier(){
 
+    $this->view('pages/index', $data);
+  }
+  
+
+  public function viewAll()
+  {
+
+
+    $products = $this->prodModel->affichageProduct();
+
+
+    $data = [
+      'products' => $products,
+    ];
+
+
+    $this->view('pages/viewAll', $data);
+  }
+
+
+  public function panier()
+  {
+
+    $data = [
+      'title' => 'formulaire Edite product',
+    ];
+
+    $this->view('pages/panier', $data);
+  }
+
+
+
+
+
+
+
+
+  public function contact()
+  {
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      // process form
       $data = [
-        'title' => 'formulaire Edite product',
+        'yourName' => trim(htmlspecialchars($_POST['yourName'])),
+        'email' => trim(htmlspecialchars($_POST['email'])),
+        'subject' => trim(htmlspecialchars($_POST['subject'])),
+        'message' => trim(htmlspecialchars($_POST['message'])),
+        'yourName_err' => '',
+        'email_err' => '',
+        'subject_err' => '',
+        'message_err' => '',
       ];
 
-      $this -> view('pages/panier', $data);
+
+      // validation with regix
+      $nameValidation = "/^[a-zA-Z' ]*$/";
+      $textValidation = "/^[a-zA-Z0-9' ]*$/";
+      $emailValidation = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
+
+      // validate your name input
+      if (empty($data['yourName'])) {
+        $data['yourName_err'] = 'Enter Your Name';
+      } elseif (!preg_match($nameValidation, $data['yourName'])) {
+        $data['yourName_err'] = 'Your Name can only contain letters .';
+      }
+
+      // validate subject input
+      if (empty($data['subject'])) {
+        $data['subject_err'] = 'Enter your Subject';
+      } elseif (!preg_match($textValidation, $data['subject'])) {
+        $data['subject_err'] = 'Subject can only contain letters .';
+      }
+
+      // validate email input
+      if (empty($data['email'])) {
+        $data['email_err'] = 'Enter your email';
+      } elseif (!preg_match($emailValidation, $data['email'])) {
+        $data['email_err'] = 'E-mail can only contain letters .';
+      }
+
+
+      // validate message input
+      if (empty($data['message'])) {
+        $data['message_err'] = 'Enter your Message';
+      } elseif (!preg_match($textValidation, $data['message'])) {
+        $data['message_err'] = 'Message can only contain letters and numbers .';
+      }
+
+      // Make sure errors are empty
+      if (empty($data['yourName_err']) && empty($data['email_err']) && empty($data['subject_err']) && empty($data['message_err'])) {
+
+        if ($this->userModel->contactUs($data)) {
+          redirect('pages/contact');
+        } else {
+          echo 'something went wonrg';
+        }
+      } else {
+        // Load view with errors
+        $this->view('pages/contact', $data);
+      }
+    } else {
+      $data = [
+        'yourName' => '',
+        'email' => '',
+        'subject' => '',
+        'message' => '',
+        'yourName_err' => '',
+        'email_err' => '',
+        'subject_err' => '',
+        'message_err' => '',
+      ];
+      $this->view('pages/contact', $data);
     }
-
-
-    
   }
+}

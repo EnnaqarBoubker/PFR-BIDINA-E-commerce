@@ -22,7 +22,7 @@
                 <div class="prof-dash text-white">
                     <img class="img-dash pb-3" src="<?= URLROOT ;?>/img/image-2/10909-612x612.jpg" alt="">
                     <?php //foreach($data['admins'] as $admin) : ?>
-                    <h3 class="pb-3"><?php echo $_SESSION['admin_name'] ?? 'baker' ;  ?></h3>
+                    <h3 class="pb-3"><?= $_SESSION['admin_name'] ;  ?></h3>
                     <?php //endforeach ?>
                     <h5>Admin</h5>
                 </div>    
@@ -32,7 +32,7 @@
                         <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/dashboardAdmin/dashAdm"><i class="fas fa-tachometer-alt"></i>&emsp; Dashboard</a></li>
                         <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/dashAdmProd/dashProd"><i class="fab fa-product-hunt"></i>&emsp; Produit</a></li> 
                         <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/dashboardAdmin/dashAdmUse"><i class="fas fa-user-alt"></i>&emsp; User</a></li>
-                        <li><a class="sid-dash nav nav-link align-middle" href="#"><i class="fas fa-money-bill"></i>&emsp; Earning</a></li>
+                        <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/dashboardAdmin/message"><i class="fas fa-comment"></i>&emsp; Message</a></li>
                         <li><a class="sid-dash nav nav-link align-middle" href="#"><i class="fab fa-product-hunt"></i>&emsp; Commands</a></li> 
                         <?php if(isset($_SESSION['user_id'])): ?>
                         <li><a class="sid-dash nav nav-link align-middle position-relative side" href="<?= URLROOT; ?>/dashboardAdmin/logout"> Logout &emsp;<i class="fas fa-sign-out-alt"></i></a></li>

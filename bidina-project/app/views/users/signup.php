@@ -14,7 +14,6 @@
     </div>
     <div class=" card border-0 p-4 m-5 col-lg-5 col-md-6 col-sm-7 mx-auto">
         <div class="signin-a card-body row">
-        <?php //flash('register_success'); ?>
             <form action="<?= URLROOT; ?>/users/signup" method="POST">
                 <div class="name mb-3 d-flex flex-column justify-content-between flex-md-row flex-lg-row">
                     <div class="w-100">

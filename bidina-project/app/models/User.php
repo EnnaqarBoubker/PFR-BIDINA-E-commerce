@@ -53,7 +53,6 @@ class User
         $row = $this->db->single();
 
         $hashedPassword = $row->password;
-
         if (password_verify($password, $hashedPassword)) {
             return $row;
         } else {
@@ -125,5 +124,39 @@ class User
         }
     }
 
-    // creat function get user count
+    // creat function get count all product
+    public function countAllUser()
+    {
+        $sql = "SELECT COUNT(*) AS user FROM users";
+        $this->db->query($sql);
+        $result = $this->db->resultSet();
+        return $result[0]->user;
+    }
+
+    //creat function contact us
+    public function contactUs($data)
+    {
+        $sql = "INSERT INTO contact (name, email,subject, message) VALUES (:name, :email,:subject, :message)";
+        $this->db->query($sql);
+        $this->db->bind(':name', $data['yourName']);
+        $this->db->bind(':email', $data['email']);
+        $this->db->bind(':subject', $data['subject']);
+        $this->db->bind(':message', $data['message']);
+
+        //Execute function
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //creat function get all message
+    public function getAllMessage()
+    {
+        $sql = "SELECT * FROM contact";
+        $this->db->query($sql);
+        $result = $this->db->resultSet();
+        return $result;
+    }
 }

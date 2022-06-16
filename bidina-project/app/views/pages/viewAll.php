@@ -21,7 +21,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="product-grid">
                         <div class="product-image">
-                            <a href="#" class="image">
+                            <a href="<?= URLROOT; ?>/pages/productDet/<?= $product -> id_product ?>" class="image">
                                 <!-- <span class="badge bg-success">Success</span> -->
                                 <img class="img-1" style="width: 227px; height: 267px;" src="<?= URLROOT; ?>/public/img/imgProducts/<?= $product -> img; ?>">
                                 <div class="kiaa position-absolute">
@@ -43,8 +43,8 @@
                                 <li><a href="#"><i class="fa fa-eye"></i></a></li>
                                 <li>
                                     <button type="button " class="btn btn-secondary btn-exept batn d-none d-lg-block d-md-none">
-                                        <a class="exept" href="#">
-                                            <i class="fas fa-shopping-cart"></i>Add to Card
+                                        <a class="exept" href="<?= URLROOT; ?>/pages/productDet/<?= $product -> id_product ?>">
+                                            View Product
                                         </a>
                                     </button>
                                 </li>
@@ -53,8 +53,6 @@
                         <div class="product-content">
                             <h2 class="title"><?= $product->titre ?></h2>
                             <div class="price"><?= $product->sold ?> MAD &emsp;<del class="text-secondary"><?= $product->allPrix ?></del> MAD</div>
-                            <button class="btn btn-secondary booton  d-block d-lg-none d-md-block"><a href="#"><i class="fas fa-shopping-cart"></i>
-                                    Add to Card</a></button>
                         </div>
                     </div>
                 </div>

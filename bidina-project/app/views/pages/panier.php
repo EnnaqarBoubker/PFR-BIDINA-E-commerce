@@ -1,109 +1,94 @@
-<?php  require APPROOT . '/views/inc/head.php'; ?>
+<?php require APPROOT . '/views/inc/head.php'; ?>
+<?php require APPROOT . '/views/inc/navbar.php'; ?>
 
-<!-- section -->
-<div class="section">
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
+<div class="p-5">
+    <div class="container-fluid">
         <div class="row">
+            <div class="col-lg-8 p-5 bg-white rounded shadow-sm mb-5">
 
-            <div class="col-md-12">
-                <div class="order-summary clearfix">
-                    <div class="section-title">
-                        <h3 class="title">Order Review</h3>
-                    </div>
-                    <?php if(isset($_SESSION['panier'])){
-                        if($_SESSION['panier'] != "."){?>
-                    <table class="shopping-cart-table table">
+                <!-- Shopping cart table -->
+                <div class="table-responsive">
+                    <table class="table">
                         <thead>
                             <tr>
-                                <th>Product</th>
-                                <th>detail</th>
-                                <th class="text-center"></th>
-                                <th class="text-center"></th>
-                                <th class="text-center">Price</th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="p-2 px-3 text-uppercase">Product</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Price</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Quantity</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Remove</div>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
-                        $total = 0;
-                         foreach($data as $object){ 
-                                foreach($object as $tab){
-                            ?>
                             <tr>
-                                <td class="thumb"><img
-                                        src="<?php echo URLROOT; ?>public/img/salle date/<?= $tab->titre ?>/<?= $tab->photo_1 ?>"
-                                        alt=""></td>
-                                <td class="details">
-                                    <a href="#"><?= $tab->titre ?></a>
-                                    <ul>
-                                        <li><span>CAPACITY : <?= $tab->capacite ?></span></li>
-                                        <li><span>Departure : <?= $tab->date_depart ?> </span></li>
-                                        <li><span> Arrival : <?= $tab->date_arrivee ?></span></li>
-                                        <li><span>CITY : <?= $tab->ville ?></span></li>
-                                    </ul>
+                                <th scope="row">
+                                    <div class="p-2">
+                                        <img src="https://bootstrapious.com/i/snippets/sn-cart/product-3.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                                        <div class="ml-3 d-inline-block align-middle">
+                                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Gray Nike running shoe</a></h5><span class="text-muted font-weight-normal font-italic">Category: Fashion</span>
+                                        </div>
+                                    </div>
+                                <td class="align-middle"><strong>$79.00</strong></td>
+                                <td class="align-middle">
+                                    <div class="coun d-flex justify-content-around" style="margin: 18px 12px;">
+                                        <div class="btns btn" id="decrement" style="border: 1px solid #6c757d; background: #ee870d; color: #fff;">-</div>
+                                        <form method="post">
+                                            <input id="counter" type="text" value="1" class="mt-1" name="quantity" style="width: 65px; text-align: center; border: 2px solid #ee870d;">
+                                        </form>
+                                        <div class="btns btn" id="increment" style="    border: 1px solid #6c757d; background: #ee870d; color: #fff;">+</div>
+                                    </div>
                                 </td>
-                                <td></td>
-                                <td class="text-center"> <a
-                                        href="<?= URLROOT ?>Paniers/deleteProduitAuPanier/<?= $tab->id_produit ?>"><button
-                                            class="main-btn icon-btn"><i class="fa fa-close"></i></button></td></a>
-                                <td class="text-right total text-center"><strong
-                                        class="primary-color">$<?= $tab->prix ?></strong></td>
-
-
+                                <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                                </td>
                             </tr>
-                            <?php 
-                        $total = $total + $tab->prix;
-                        } }?>
-
                         </tbody>
-
-                        <form action="<?= URLROOT ?>Checkouts/checkout" method="POST">
-                            <tfoot>
-                                <tr>
-                                    <th class="empty" colspan="3"></th>
-                                    <th>SUBTOTAL</th>
-                                    <th colspan="2" class="sub-total">$<?= $total ?></th>
-                                </tr>
-                                <tr>
-                                    <th class="empty" colspan="3"></th>
-                                    <th>TVA</th>
-                                    <td colspan="2">10%</td>
-                                </tr>
-                                <tr>
-                                    <th class="empty" colspan="3"></th>
-                                    <th>TOTAL</th>
-                                    <th colspan="2" class="total">$<?= ($total*0.1)+$total ?></th>
-                                </tr>
-                            </tfoot>
                     </table>
-
-                    <div class="pull-right">
-                        <button type="submit" class="primary-btn">Place Order</button>
-                    </div>
-                    </form>
-                    <?php }else{?>
-                        <div class="text-center">
-                        <img src="<?php echo URLROOT; ?>/img/image-2/panier.jpg" style="width: 400px;height: 400px;" class="image-center"> 
-                        <h3 class="text-center">panier est vide !</h3>  
-                        <a href="<?php echo URLROOT; ?>" class="center"><button class="primary-btn add-to-cart">COMMENCEZ VOS ACHATS</button></a>
-                        </div>
-                        <?php }}else{?>
-                        <div class="text-center">
-                        <img src="<?php echo URLROOT; ?>/img/imgage-2/panier.jpg" style="width: 400px;height: 400px;" class="image-center"> 
-                        <h3 class="text-center">panier est vide !</h3>  
-                        <a href="<?php echo URLROOT; ?>" class="center"><button class="primary-btn add-to-cart">COMMENCEZ VOS ACHATS</button></a>
-                        </div>
-                    <?php }?>
-
                 </div>
-
+                <!-- End -->
             </div>
+            <div class="col-lg-4 p-5 bg-white rounded shadow-sm mb-5">
 
+                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
+                <div class="p-4">
+                    <ul class="list-unstyled mb-4">
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>$390.00</strong></li>
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li>
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
+                            <h5 class="font-weight-bold">$400.00</h5>
+                        </li>
+                    </ul><a href="#" class="btn batin rounded-pill p-3 w-100 btn-block">Commander</a>
+                </div>
+            </div>
         </div>
-        <!-- /row -->
+
     </div>
-    <!-- /container -->
 </div>
 
-<?php  require APPROOT . '/views/inc/footerDash.php'; ?>
+<script>
+    let btnIncrement = document.getElementById('increment');
+    let btnDecrement = document.getElementById('decrement');
+    let counter = document.getElementById('counter');
+    btnIncrement.addEventListener('click', function() {
+        let value = parseInt(counter.value);
+        if (value < 30) {
+            value++;
+            counter.value = value;
+        }
+    })
+    btnDecrement.addEventListener('click', function() {
+        let value = parseInt(counter.value);
+        if (value > 1) {
+            value--;
+            counter.value = value;
+        }
+    })
+</script>
+
+<?php require APPROOT . '/views/inc/footer.php'; ?>

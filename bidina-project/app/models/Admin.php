@@ -9,40 +9,15 @@ class Admin {
         $this -> db = new Database;
     }
 
-    // public function signin($email, $password)
-    // {
+    public function signin($email, $password)
+    {
+        $sql = 'SELECT * FROM `admin` WHERE email = :email';
+        $this->db->query($sql);
+        $this->db->bind(':email', $email);
 
-    //     $sql = "SELECT * FROM `admin` WHERE email = $email and password = $password" ;
-    //     $this->db->query($sql);
-
-    //     // $this->db->bind(':email', $email);
-    //     // $this->db->bind(':password', $password);
-
-    //     var_dump($this->db->single());
-    //     exit;
-    //     if (!empty($row)) {
-    //         return $row;
-    //     }else{
-    //         return false;
-    //     }
-    // }
-    //creat methode signin
-    // public function signin($email, $password){
-    //     $this->db->query("SELECT * FROM `admin` WHERE email = :email and password = :password");
-    //     $this->db->bind(':email', $email);
-    //     $this->db->bind(':password', $password);
-
-    //    $this->db->execute();
-    //     $row = $this->db->resultSet();
-    //     var_dump($row);
-    //     exit;
-
-    //     if (!empty($row)) {
-    //         return $row;
-    //     }else{
-    //         return false;
-    //     }
-    // }
+        $row = $this->db->single();
+        return $row;
+    }
 
      // find user by email            
      public function findAdminByEmail($email)
@@ -61,10 +36,10 @@ class Admin {
      }
 
      //Find admin by email. Email is passed in by the Controller.
-    public function findAdminByEmailAndReturnAdminData($id)
+    public function findAdminByEmailAndReturnAdminData($email)
     {
         //Prepared statement
-        $this->db->query("SELECT * FROM `admin` WHERE email = '$id'");
+        $this->db->query("SELECT * FROM `admin` WHERE email = '$email'");
 
         $res = $this->db-> single();
 
