@@ -140,7 +140,7 @@
                             <ul class="product-links">
                                 <!-- <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li> -->
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
+                                <li><a href="<?= URLROOT; ?>/productDet/productDet/<?= $product -> id_product ?>"><i class="fa fa-eye"></i></a></li>
                                 <li>
                                     <button type="button " class="btn btn-secondary btn-exept batn d-none d-lg-block d-md-none">
                                         <a class="exept" href="<?= URLROOT; ?>/pages/productDet/<?= $product -> id_product ?>">
@@ -162,13 +162,13 @@
 
 
         <div class="container mt-4">
-            <div class="raw d-flex flex-column flex-lg-row flex-md-column">
-                <div class="azza">
+            <div class="raw d-flex flex-column flex-lg-row flex-md-column slider-animated-1">
+                <div class="azza animate__animated animate__backInLeft">
                     <a href="#">
                         <img class="phata w-100" src="<?= URLROOT; ?>/img/image-2/Capture.PNG" alt="" srcset="">
                     </a>
                 </div>
-                <div class="azza">
+                <div class="azza animate__animated animate__backInRight">
                     <a href="#">
                         <img class="phata w-100" src="<?= URLROOT; ?>/img/image-2/Capture1.PNG" alt="" srcset="">
                     </a>

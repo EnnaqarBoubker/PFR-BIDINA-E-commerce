@@ -1,6 +1,6 @@
 
     <header>
-        <div class="into d-lg-flex justify-content-between align-items-center p-2 px-5 d-none">
+        <!-- <div class="into d-lg-flex justify-content-between align-items-center p-2 px-5 d-none">
             <div class="intro-para">
                 <p class="m-0 fst-italic">Welcome to the best site for selling handicraft products</p>
             </div>
@@ -11,10 +11,10 @@
                     <option value="3">Arabic</option>
                 </select>
             </div>
-        </div>
+        </div> -->
         <nav class="navbar navbar-expand-lg navbar-light w-100" id="topp">
             <div class="container-fluid">
-            <div class="row row-cols-lg-2 justify-content-around align-items-center m-0 w-100">
+            <div class="row row-cols-lg-2 justify-content-around align-items-center m-0 w-100 flex-wrap">
                 <div class="col">
                     <a class="img " href="<?php echo URLROOT; ?>">
                         <img class=" image py-3" src="<?php echo URLROOT ?>/img/image-2/logo11.png" alt="logo bidina"></a>
@@ -59,7 +59,7 @@
                         <a href="<?= URLROOT; ?>/pages/panier" class="btn border-0 position-relative" type="button">
                             <i class="fas fa-shopping-cart iconat"></i>
                             <span class="position-absolute top-0 translate-middle badge rounded-pill">1</span>
-                         </a>
+                        </a>
                     </div>
                 </div>
                 <div class="col d-lg-none d-block">

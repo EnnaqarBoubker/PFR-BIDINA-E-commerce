@@ -46,14 +46,15 @@ class User
 
     public function signin($email, $password)
     {
-        $sql = 'SELECT * FROM users WHERE email = :email';
+        $sql = 'SELECT * FROM users WHERE email = :email and password = :password';
         $this->db->query($sql);
         $this->db->bind(':email', $email);
+        $this->db->bind(':password', $password);
 
         $row = $this->db->single();
 
-        $hashedPassword = $row->password;
-        if (password_verify($password, $hashedPassword)) {
+        
+        if ($row->password) {
             return $row;
         } else {
             return false;
@@ -75,7 +76,7 @@ class User
             return false;
         }
     }
-      // find user by id
+      // find user by id    
       public function gitUserById($id)
       {
           $sql = "SELECT * FROM users WHERE id = :id";
@@ -158,5 +159,13 @@ class User
         $this->db->query($sql);
         $result = $this->db->resultSet();
         return $result;
+    }
+    //creat methode count all message
+    public function countAllMessage()
+    {
+        $sql = "SELECT COUNT(*) AS message FROM contact";
+        $this->db->query($sql);
+        $result = $this->db->resultSet();
+        return $result[0]->message;
     }
 }

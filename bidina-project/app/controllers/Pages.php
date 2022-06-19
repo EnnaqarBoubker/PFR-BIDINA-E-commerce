@@ -4,23 +4,19 @@ class Pages extends Controller
 
   public function __construct()
   {
-
     $this->prodModel = $this->model('Products');
     $this->userModel = $this->model('User');
+    $this->panierModel = $this->model('Panier');
   }
 
   // methode the affichage index 
   public function index()
   {
-
-
     $products = $this->prodModel->affichageProductLimit();
-
 
     $data = [
       'products' => $products,
     ];
-
 
     $this->view('pages/index', $data);
   }
@@ -28,15 +24,11 @@ class Pages extends Controller
 
   public function viewAll()
   {
-
-
     $products = $this->prodModel->affichageProduct();
-
 
     $data = [
       'products' => $products,
     ];
-
 
     $this->view('pages/viewAll', $data);
   }
@@ -44,18 +36,11 @@ class Pages extends Controller
 
   public function panier()
   {
-
-    $data = [
-      'title' => 'formulaire Edite product',
-    ];
-
+    
+    @$data = $this->panierModel->getprodToPanierById($_SESSION['user_id']);
+    
     $this->view('pages/panier', $data);
   }
-
-
-
-
-
 
 
 

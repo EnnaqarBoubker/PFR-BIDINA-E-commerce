@@ -43,7 +43,7 @@
                   
                 <section>
                     <div class="table-responsive" style="max-height:415px;">
-                        <table class="table table-striped">
+                        <table class="table table-striped align-middle">
                             <thead>
                               <tr>
                                 <th class="">Img Produit</th>

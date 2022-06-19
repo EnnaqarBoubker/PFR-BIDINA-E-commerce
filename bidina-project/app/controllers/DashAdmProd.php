@@ -54,10 +54,13 @@ class DashAdmProd extends Controller
         'error_categoris' => '',
 
       ];
+    
+
 
       $terget = dirname(APPROOT) . "/public/img/imgProducts/" . $_FILES['img']['name'];
-      move_uploaded_file($_FILES['img']['tmp_name'], $terget);
+      move_uploaded_file($_FILES['img']['ymp_name'], $terget);
 
+      
 
       $validationPrix = "/^\d{0,8}(\.\d{1,4})?$/";
       $validationTitre =  "/^[a-zA-Z' ]*$/";
@@ -122,7 +125,7 @@ class DashAdmProd extends Controller
   {
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
       $product = $this->prodModel->getprodById($id);
-
+      
       $_SESSION['img'] = $product->img;
       //  echo $_SESSION['img'];
       //  exit;

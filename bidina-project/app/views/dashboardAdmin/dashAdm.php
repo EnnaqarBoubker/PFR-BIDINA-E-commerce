@@ -1,7 +1,5 @@
 <?php require_once APPROOT . "/views/inc/headerDash.php" ?>
 
-
-        
                 <!-- Page content-->
                 <div class="container">
                     <div class="row m-5">
@@ -39,7 +37,7 @@
                                         <h5 class="pt-3">Message</h5>
                                     </div>
                                     <div class="categ-rr">
-                                        <h6 class="float-end fs-4">4</h6>
+                                        <h6 class="float-end fs-4"><?php echo $data['messages']?></h6>
                                     </div>
                                 </div>
                             </div>

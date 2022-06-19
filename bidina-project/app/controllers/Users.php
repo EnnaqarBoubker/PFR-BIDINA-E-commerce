@@ -85,8 +85,7 @@ class Users extends Controller{
             }
             // Make sure errors are empty
             if(empty($data['firstName_err']) && empty($data['lastName_err']) && empty($data['email_err']) && empty($data['phone_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])){
-                //hash password
-                $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+    
                 // creat count signup
                if ( $this -> userModel -> signup($data)) {
                     redirect('users/signin');
@@ -105,8 +104,10 @@ class Users extends Controller{
             $data = [ 
                 'firstName' => '',
                 'lastName' => '',
+                
                 'email' => '',
                 'phone' => '',
+                
                 'password' => '',
                 'confirm_password' => '',
                 'firstName_err' => '',
@@ -132,6 +133,8 @@ class Users extends Controller{
                 'password' => trim(htmlspecialchars($_POST['password'])),
                 'email_err' => '',
                 'password_err' => '',
+                'fullName' => '',
+                'role' => '',
             ];
 
             // validate email input
@@ -156,16 +159,25 @@ class Users extends Controller{
 
              // Make sure errors are empty
              if(empty($data['email_err']) && empty($data['password_err'])){
-                // Validated
-                $logined = $this -> userModel -> signin($data['email'], $data['password']);
-
-                if($logined){
-                    // creat session var
-                    $this -> creatSessionUser($logined);
-                }else{
-                    $data['password_err'] = 'Password incorrect';
-                    $this->view('users/signin', $data);
-                }
+            
+                    $user = $this -> userModel -> signin($data['email'], $data['password']);
+                    if($user){
+                        $data['role'] = $user -> role;
+                        // if user found
+                        if($data['role'] !== 'admin'){
+                            // create session
+                            $this->creatSessionUser($user);
+                            return redirect('pages/index');
+                        }else{
+                            $this->creatSessionUser($user);
+                            return redirect('dashboardAdmin/dashAdm');
+                        }
+                    }
+                    else{
+                        // if user not found
+                        $data['password_err'] = 'Password Incorrect';
+                        $this->view('users/signin', $data);
+                    }
             } else {
                 // Load view with errors
                 $this->view('users/signin', $data);
@@ -180,6 +192,8 @@ class Users extends Controller{
                 'password' => '',
                 'email_err' => '',
                 'password_err' => '',
+                'fullName' => '',
+                'role' => '',
                 
             ];
 
@@ -189,11 +203,14 @@ class Users extends Controller{
     // the session makes server identify the information user;
     public function creatSessionUser($user)
     {
-       $_SESSION['user_id'] = $user -> id; // the id came from model
-       $_SESSION['user_firstName'] = $user -> firstName;
-       $_SESSION['user_lastName'] = $user -> lastName;
-       $_SESSION['user_email'] = $user -> email;
-       $_SESSION['user_phone'] = $user -> phone;
+        $_SESSION['user_id'] = $user -> id; // the id came from model
+        $_SESSION['user_firstName'] = $user -> firstName;
+        $_SESSION['user_lastName'] = $user -> lastName;
+        $_SESSION['user_fullName'] = $user -> fullName;
+        $_SESSION['user_email'] = $user -> email;
+        $_SESSION['user_phone'] = $user -> phone;
+        $_SESSION['user_role'] = $user -> role;
+
        redirect('pages/index');
     }
 
@@ -202,6 +219,7 @@ class Users extends Controller{
        unset($_SESSION['user_id']);
        unset($_SESSION['user_email']);
        unset($_SESSION['user_password']);
+
 
        session_destroy();
        redirect('pages/index');

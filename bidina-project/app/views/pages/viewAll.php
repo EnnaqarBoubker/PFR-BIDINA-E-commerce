@@ -21,7 +21,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="product-grid">
                         <div class="product-image">
-                            <a href="<?= URLROOT; ?>/pages/productDet/<?= $product -> id_product ?>" class="image">
+                            <a href="<?= URLROOT; ?>/productDet/productDet/<?= $product -> id_product ?>" class="image">
                                 <!-- <span class="badge bg-success">Success</span> -->
                                 <img class="img-1" style="width: 227px; height: 267px;" src="<?= URLROOT; ?>/public/img/imgProducts/<?= $product -> img; ?>">
                                 <div class="kiaa position-absolute">

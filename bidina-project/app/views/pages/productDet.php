@@ -13,20 +13,26 @@
             <del class="fonts line" style="font-size: 17px;"><?= $data->allPrix; ?> Dhs</del>
             <h4 class="fonts text-secondary fw-lighter fonts">Sold</h4>
             <h3 class="fonts"><?= $data->sold; ?> Dhs</h3>
-
-
+            
+            
             <!-- crate form hiden -->
             <form method="post" action="<?= URLROOT; ?>/paniers/addToPanier">
                 <input type="hidden" name="titre" value="<?= $data->titre; ?>">
-                <input type="hidden" name="img" value="<?php echo $data->img; ?>">
+                <input type="hidden" name="img" value="<?= $data->img; ?>">
                 <input type="hidden" name="allPrix" value="<?= $data->allPrix; ?>">
                 <input type="hidden" name="sold" value="<?= $data->sold; ?>">
                 <input type="hidden" name="id_product" value="<?= $data->id_product; ?>">
-                <!-- <input type="hidden" name="quantity" value="1"> -->
+                <input type="hidden" name="id_user" value="<?= $data-> id_user ?>">
+                <div class="coun d-flex justify-content-around" style="margin: 18px 12px;">
+                    <div class="btns btn" id="decrement" style="border: 1px solid #6c757d; background: #ee870d; color: #fff;">-</div>
+                        <input id="counter" type="text" value="1" class="mt-1" name="quantity" style="width: 65px; text-align: center; border: 2px solid #ee870d;">
+                    <div class="btns btn" id="increment" style="border: 1px solid #6c757d; background: #ee870d; color: #fff;">+</div>
+                </div>
+
                 <?php if (isset($_SESSION['user_id'])) : ?>
-                    <input type="submit" name="submit" value="ADD TO CARD" class="batin p-3 border-0 text-light ">
+                    <input type="submit" name="submit" value="ADD TO CARD" class="batin p-3 border-0 text-light w-100">
                 <?php else : ?>
-                    <a class="batin position-relative p-3 border-0 text-light" style="top: 28px;" href="<?= URLROOT; ?>/users/signin">LOG IN TO ADD TO CART</a>
+                    <a class="batin position-relative p-3 border-0 text-light" style="top: 28px; width : 100%;" href="<?= URLROOT; ?>/users/signin">LOG IN TO ADD TO CART</a>
                 <?php endif; ?>
 
 
@@ -34,6 +40,24 @@
         </div>
     </div>
 </div>
-
+<script>
+    let btnIncrement = document.getElementById('increment');
+    let btnDecrement = document.getElementById('decrement');
+    let counter = document.getElementById('counter');
+    btnIncrement.addEventListener('click', function() {
+        let value = parseInt(counter.value);
+        if (value < 30) {
+            value++;
+            counter.value = value;
+        }
+    })
+    btnDecrement.addEventListener('click', function() {
+        let value = parseInt(counter.value);
+        if (value > 1) {
+            value--;
+            counter.value = value;
+        }
+    })
+</script>
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>
