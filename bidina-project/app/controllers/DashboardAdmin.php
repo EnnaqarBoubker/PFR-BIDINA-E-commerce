@@ -5,7 +5,6 @@ class DashboardAdmin extends Controller
 
     public function __construct()
     {
-        $this->adminModel = $this->model('Admin');
         $this->userModel = $this->model('User');
         $this->prodModel = $this->model('Products');
 
@@ -18,7 +17,6 @@ class DashboardAdmin extends Controller
     // } else {
     //     redirect('dashboardAdmin/signin');
     // }
-    
     
     }
 

@@ -7,7 +7,7 @@
             <img src="<?= URLROOT; ?>/public/img/imgProducts/<?= $data->img; ?>" class="border p-3 border-dark border-2" style="width: 20rem; height: 25rem;" id="ProductImg">
         </div>
 
-        <div class="col-lg-4 col-sm-8">
+        <div class="col-lg-4 col-sm-8" style="padding-left: 40px;">
             <h1 class="fontliv"><?= $data->titre; ?></h1>
             <h4 class="fonts text-secondary fw-lighter fonts" style="font-size: 17px;">All Prix</h4>
             <del class="fonts line" style="font-size: 17px;"><?= $data->allPrix; ?> Dhs</del>

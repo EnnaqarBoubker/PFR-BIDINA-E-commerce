@@ -47,13 +47,8 @@
                     <input type="password"  name="confirm_password" placeholder="Confirm Password" class="form-control <?= (!empty($data['confirm_password_err'])) ? 'is-invalid' : ''; ?>"  value="<?= $data['confirm_password']; ?>">
                     <span class="invalid-feedback"><?= $data['confirm_password_err'] ?></span>
                 </div>
-                <div class="form-check mb-3">
-                    <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault" style="width: 20px; height: 20px; ">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        I've read and accept the Privacy Policy
-                    </label>
-                </div>
-                <input class="buton btn btn-lg w-100 text-white mt-4" type="submit" name="submit" value="Sign In">
+                
+                <input class="buton btn btn-lg w-100 text-white mt-4" type="submit" name="submit" value="Sign Up">
                 <div class="buton-a d-flex flex-column flex-lg-row flex-md-column justify-content-between py-3">
                     <a class=" udme udme-a d-inline-block w-100" href="<?= URLROOT; ?>/users/signin">Already have a account?</a>
                 </div>

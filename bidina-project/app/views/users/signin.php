@@ -27,6 +27,12 @@
                         <input type="password" name="password" placeholder="Enter your password" class="form-control <?= (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" value="<?= $data['password'] ?>">
                         <span class="invalid-feedback"><?= $data['password_err'] ?></span>
                     </div>
+                    <div class="form-check mb-3">
+                    <input class="form-check-input" name="checked" type="checkbox" value="" id="flexCheckDefault" style="width: 20px; height: 20px; ">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        I've read and accept the Privacy Policy
+                    </label>
+                </div>
                     <input class="buton btn btn-lg w-100 text-white" type="submit" name="submit" value="Sign In">
 
                     <div class="buton-a d-flex flex-column flex-lg-row flex-md-column justify-content-between py-3">
