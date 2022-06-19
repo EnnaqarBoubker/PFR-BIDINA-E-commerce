@@ -212,10 +212,6 @@ class Users extends Controller
         unset($_SESSION['user_id']);
         unset($_SESSION['user_email']);
         unset($_SESSION['user_password']);
-        unset($_SESSION['user_firstName']);
-        unset($_SESSION['user_lastName']);
-        unset($_SESSION['user_fullName']);
-        unset($_SESSION['user_phone']);
         unset($_SESSION['user_role']);
         
         session_destroy();
