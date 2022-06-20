@@ -1,3 +1,8 @@
+
+<?php  
+if($_SESSION['user_role'] == 'admin'){
+
+?>
 <?php require_once APPROOT . "/views/inc/headerDash.php" ?>
 
                 <!-- Page content-->
@@ -60,4 +65,10 @@
                 </div>
             </div>
         </div>
-       <?php require_once APPROOT . "/views/inc/footerDash.php" ; ?>
+       <?php require_once APPROOT . "/views/inc/footerDash.php" ; 
+       
+    }else{
+        redirect('pages/index');
+    }
+       
+       ?>

@@ -13,9 +13,11 @@ class Pages extends Controller
   public function index()
   {
     $products = $this->prodModel->affichageProductLimit();
+   @$paniers = $this->panierModel->getCountQuantityProdInPanier($_SESSION['user_id']);
 
     $data = [
       'products' => $products,
+      'paniers' => $paniers,
     ];
 
     $this->view('pages/index', $data);
@@ -37,7 +39,13 @@ class Pages extends Controller
   public function panier()
   {
     
-    @$data = $this->panierModel->getprodToPanierById($_SESSION['user_id']);
+    @$prods = $this->panierModel->getprodToPanierById($_SESSION['user_id']);
+    $paniers = $this->panierModel->getCountQuantityProdInPanier($_SESSION['user_id']);
+
+    $data = [
+      'prods' => $prods,
+      'paniers' => $paniers,
+    ];
     
     $this->view('pages/panier', $data);
   }

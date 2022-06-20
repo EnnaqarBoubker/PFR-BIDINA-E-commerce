@@ -79,5 +79,20 @@ class Panier
         }
     }
 
+
+  //creat function get count all product in panier
+    public function getCountQuantityProdInPanier($id_user){
+        $sql = "SELECT COUNT(*) AS produit FROM panier WHERE id_user = '$id_user'";
+        $this->db->query($sql);
+        $result = $this->db->resultSet();
+        // die(var_dump($result));
+        return $result[0]->produit;
+        
+    }
+
+    
+         
+
+
     
 }

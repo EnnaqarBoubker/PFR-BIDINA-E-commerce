@@ -27,13 +27,13 @@
                         <tbody>
                             <?php
                             
-                            foreach($data as  $panier) :?>
+                            foreach($data['prods'] as  $panier) :?>
                             <tr>
                                 <th scope="row">
                                     <div class="p-2">
                                         <img src="<?= URLROOT; ?>/public/img/imgProducts/<?= $panier->img;?>" width="70" class="img-fluid rounded shadow-sm">
                                         <div class="ml-3 d-inline-block align-middle">
-                                            <h5 class="mb-0"> <a href="<?= URLROOT; ?>/pages/productDet/<?= $panier -> id_product ?>" class="text-dark d-inline-block"><?= $panier->titre; ?></a></h5>  
+                                            <h5 class="mb-0"> <a href="<?= URLROOT; ?>/productDet/productDet/<?= $panier -> id_product ?>" class="text-dark d-inline-block"><?= $panier->titre; ?></a></h5>  
                                         </div>
                                     </div>
                                 <td class="align-middle"><strong><?=  $panier->sold ?> Dhr</strong></td>
@@ -62,6 +62,7 @@
                             <h5 class="font-weight-bold">$400.00</h5>
                         </li>
                     </ul><a href="#" class="btn batin rounded-pill p-3 w-100 btn-block">Commander</a>
+
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@
     <form method="post" action="<?= URLROOT; ?>/dashAdmProd/addProd" enctype="multipart/form-data"> 
         <div class="form-group mb-4">
             <label for="formFile" class="form-label">Choise Img Product</label>
-            <input  type="file" id="formFile" name="img" class="form-control <?php //(!empty($data['error_titre'])) ? 'is-invalid' : ''; ?>"  value="<?php // $data['titre'];?>">
+            <input  type="file" id="formFile" name="img" class="form-control">
         </div>
         <div class="form-group mb-4">
             <label for="titre">Title Product*</label>

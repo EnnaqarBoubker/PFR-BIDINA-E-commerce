@@ -162,7 +162,7 @@ class Users extends Controller
                     $this->creatSessionUser($user);
                     // if user found
                     if (($data['email'] == 'admin@gmail.com') && ($data['role'] == 'admin')) {
-                        // redirect to admin
+                        $_SESSION['user_role'] == $user->role;
                         return redirect('dashboardAdmin/dashAdm');
                     } else {
                         return redirect('pages/index');
