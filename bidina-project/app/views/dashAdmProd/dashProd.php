@@ -63,8 +63,8 @@
                               <tr>
                                 <td><img class="prod-dash" style="width: 50px; height=: 50px;" src="<?= URLROOT; ?>/public/img/imgProducts/<?= $product -> img; ?>" alt="produit-1"></td>
                                 <td><?php echo $product -> titre ?></td>
-                                <td><?php echo $product -> allPrix ?> <span class="fw-bold" style="font-size: 10px;">MAD</span></td>
-                                <td><?php echo $product -> sold ?> <span class="fw-bold" style="font-size: 10px;">MAD</span></td>
+                                <td><?php echo $product -> allPrix ?> <span class="fw-bold" style="font-size: 10px;">$</span></td>
+                                <td><?php echo $product -> sold ?> <span class="fw-bold" style="font-size: 10px;">$</span></td>
                                 <td><?php echo $product -> remise ?> <span class="fw-bold" style="font-size: 10px;">%</span></td>
                                 <td><?php echo $product -> new ?></td>
                                 <td><?php echo $product -> categoris ?></td>

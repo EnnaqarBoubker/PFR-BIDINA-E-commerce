@@ -165,7 +165,7 @@ class Users extends Controller
                         $_SESSION['user_role'] == $user->role;
                         return redirect('dashboardAdmin/dashAdm');
                     } else {
-                        return redirect('pages/index');
+                        return redirect('pages/productDet/' . $_SESSION['id_product']);
                     }
                 } else {
                     // if user not found

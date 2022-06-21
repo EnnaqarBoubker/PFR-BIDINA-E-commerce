@@ -3,7 +3,7 @@
 
 <div class="p-5">
     <div class="container-fluid">
-        <a href="<?= URLROOT ?>/pages/viewAll" class="btn batin rounded-pill p-3 w-100 btn-block"> View ALL Products</a>
+        <a href="<?= URLROOT ?>/pages/viewAll" class="btn batin rounded-pill p-3 w-25 btn-block"> View ALL Products</a>
         <div class="row">
             <div class="col-lg-8 col-12 p-5 bg-white rounded shadow-sm mb-5">
 

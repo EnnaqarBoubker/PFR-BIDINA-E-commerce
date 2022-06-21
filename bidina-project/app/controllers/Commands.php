@@ -26,7 +26,7 @@ class Commands extends Controller{
             'paniers' => $paniers,
         ];
         
-        $this->view('pages/index', $data);
+        $this->view('pages/command', $data);
     }
 
 
@@ -44,7 +44,7 @@ class Commands extends Controller{
             'paniers' => $paniers,
             'products' => $products,
         ];
-        $this->view('pages/index',$data);
+        $this->view('pages/command',$data);
 
     }
     

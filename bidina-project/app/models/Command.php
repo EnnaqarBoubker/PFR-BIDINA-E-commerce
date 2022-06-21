@@ -21,7 +21,7 @@ class Command
             return true;
         } else {
             return false;
-        }
+        } 
     }
 
 

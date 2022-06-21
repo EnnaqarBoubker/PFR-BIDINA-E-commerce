@@ -1,6 +1,6 @@
 <?php
 
-class Admin {
+// class Admin {
 
     // private $db;
 
@@ -54,4 +54,4 @@ class Admin {
     //     return $res;
     // }
 
-} 
+// } 

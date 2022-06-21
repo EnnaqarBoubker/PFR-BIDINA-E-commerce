@@ -58,7 +58,7 @@ class DashAdmProd extends Controller
 
 
       $terget = dirname(APPROOT) . "/public/img/imgProducts/" . $_FILES['img']['name'];
-      move_uploaded_file($_FILES['img']['ymp_name'], $terget);
+      move_uploaded_file($_FILES['img']['tmp_name'], $terget);
 
       
 
