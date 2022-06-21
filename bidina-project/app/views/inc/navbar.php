@@ -58,7 +58,7 @@
                         <!-- panier -->
                         <a href="<?= URLROOT; ?>/pages/panier" class="btn border-0 position-relative" type="button">
                             <i class="fas fa-shopping-cart iconat"></i>
-                            <span class="position-absolute top-0 translate-middle badge rounded-pill" style="z-index: 9999;"><?php echo (isset($_SESSION['user_id'])) ? ($data['paniers']) : '0' ?></span>
+                            <span class="position-absolute top-0 translate-middle badge rounded-pill" style="z-index: 9999;"><?php echo (!isset($data['panier'])) ? ($data['paniers']) : '0' ?></span>
                         </a>
                     </div>
                 </div>

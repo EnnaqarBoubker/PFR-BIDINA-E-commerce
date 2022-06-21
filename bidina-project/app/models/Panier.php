@@ -90,7 +90,18 @@ class Panier
         
     }
 
-    
+    //creat method delete All from Panier
+    public function deleteAllProdFromPanier($id_user){
+        $sql = 'DELETE FROM `panier` WHERE id_user = :id_user';
+        $this->db->query($sql);
+        $this->db->bind(':id_user', $id_user);
+        // Execute
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
          
 
 

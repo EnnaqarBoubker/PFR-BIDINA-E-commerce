@@ -14,6 +14,7 @@
             <h4 class="fonts text-secondary fw-lighter fonts">Sold</h4>
             <h3 class="fonts"><?= $data['products']->sold; ?> Dhs</h3>
 
+           
 
             <!-- crate form hiden -->
             <form method="post" action="<?= URLROOT; ?>/paniers/addToPanier">
@@ -37,7 +38,7 @@
 
 
             </form>
-            <div class="totla" id="total"></div>
+            <div class="totla" id="total"> <?php //echo ($total*0.2) +$total ?></div>
         </div>
     </div>
 </div>

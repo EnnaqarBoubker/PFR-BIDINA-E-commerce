@@ -39,8 +39,8 @@ class Pages extends Controller
   public function panier()
   {
     
-    @$prods = $this->panierModel->getprodToPanierById($_SESSION['user_id']);
-    $paniers = $this->panierModel->getCountQuantityProdInPanier($_SESSION['user_id']);
+    $prods = $this->panierModel->getprodToPanierById($_SESSION['user_id']);
+    @$paniers = $this->panierModel->getCountQuantityProdInPanier($_SESSION['user_id']);
 
     $data = [
       'prods' => $prods,

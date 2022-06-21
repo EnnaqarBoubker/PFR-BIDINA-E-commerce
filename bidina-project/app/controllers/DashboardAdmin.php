@@ -62,5 +62,16 @@ class DashboardAdmin extends Controller
 
         $this->view('dashboardAdmin/message', $data);
     }
+
+
+
+    public function command()
+    {
+        $data = [
+            'titre' => '',
+        ];
+
+        $this->view('dashboardAdmin/command', $data);
+    }
     
 }

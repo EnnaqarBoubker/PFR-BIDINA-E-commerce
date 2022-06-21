@@ -40,10 +40,10 @@
                             <ul class="product-links">
                                 <!-- <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li> -->
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
+                                <li><a href="<?= URLROOT; ?>/productDet/productDet"><i class="fa fa-eye"></i></a></li>
                                 <li>
                                     <button type="button " class="btn btn-secondary btn-exept batn d-none d-lg-block d-md-none">
-                                        <a class="exept" href="<?= URLROOT; ?>/pages/productDet/<?= $product -> id_product ?>">
+                                        <a class="exept" href="<?= URLROOT; ?>/productDet/productDet/<?= $product -> id_product ?>">
                                             View Product
                                         </a>
                                     </button>

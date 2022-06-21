@@ -116,7 +116,6 @@
         <div class="row container-fluid">
             <?php
             foreach ($data['products'] as $product) :
-                
             ?>
                 <div class="col-md-3 col-sm-6">
                     <div class="product-grid">
@@ -143,7 +142,7 @@
                                 <li><a href="<?= URLROOT; ?>/productDet/productDet/<?= $product -> id_product ?>"><i class="fa fa-eye"></i></a></li>
                                 <li>
                                     <button type="button " class="btn btn-secondary btn-exept batn d-none d-lg-block d-md-none">
-                                        <a class="exept" href="<?= URLROOT; ?>/pages/productDet/<?= $product -> id_product ?>">
+                                        <a class="exept" href="<?= URLROOT; ?>/productDet/productDet/<?= $product -> id_product ?>">
                                             View Product
                                         </a>
                                     </button>
