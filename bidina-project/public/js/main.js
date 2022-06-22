@@ -13,7 +13,7 @@ submit.addEventListener('click', (e) => {
     e.preventDefault();
     validate();
 });
-
+ 
 function validate(){
 
     // validate name
