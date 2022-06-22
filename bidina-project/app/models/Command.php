@@ -24,5 +24,17 @@ class Command
         } 
     }
 
+    //creat method get all command
+
+    public function getAllCommand()
+    {
+        $sql = 'SELECT * FROM command';
+        $this->db->query($sql);
+        $row = $this -> db -> resultSet();
+
+        return $row;
+
+    }
+
 
 }

@@ -33,7 +33,7 @@
                         <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/dashAdmProd/dashProd"><i class="fab fa-product-hunt"></i>&emsp; Produit</a></li> 
                         <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/dashboardAdmin/dashAdmUse"><i class="fas fa-user-alt"></i>&emsp; User</a></li>
                         <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/dashboardAdmin/message"><i class="fas fa-comment"></i>&emsp; Message</a></li>
-                        <li><a class="sid-dash nav nav-link align-middle" href="<?php //URLROOT; ?>"><i class="fab fa-product-hunt"></i>&emsp; Commands</a></li> 
+                        <li><a class="sid-dash nav nav-link align-middle" href="<?= URLROOT; ?>/dashboardAdmin/command"><i class="fab fa-product-hunt"></i>&emsp; Commands</a></li> 
                         <?php if(isset($_SESSION['user_id'])): ?>
                             <li><a class="sid-dash nav nav-link align-middle position-relative side" href="<?= URLROOT; ?>/users/logout"> Logout &emsp;<i class="fas fa-sign-out-alt"></i></a></li>
                         <?php else :?>

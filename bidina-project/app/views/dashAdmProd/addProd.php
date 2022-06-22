@@ -16,14 +16,14 @@
                     <span class="invalid-feedback"><?= $data['error_titre'] ?></span>
                 </div>
                 <div class="form-group mb-4">
+                    <label for="allPrix">Old Price*</label>
+                    <input type="text" name="allPrix" placeholder="Old Price" class="form-control <?= (!empty($data['error_allPrix'])) ? 'is-invalid' : ''; ?>" value="<?= $data['allPrix']; ?>">
+                    <span class="invalid-feedback"><?= $data['error_allPrix'] ?></span>
+                </div>
+                <div class="form-group mb-4">
                     <label for="sold">Sold*</label>
                     <input type="text" name="sold" placeholder="Sold" class="form-control <?= (!empty($data['error_sold'])) ? 'is-invalid' : ''; ?>" value="<?= $data['sold']; ?>">
                     <span class="invalid-feedback"><?= $data['error_sold'] ?></span>
-                </div>
-                <div class="form-group mb-4">
-                    <label for="allPrix">All Price*</label>
-                    <input type="text" name="allPrix" placeholder="All Price" class="form-control <?= (!empty($data['error_allPrix'])) ? 'is-invalid' : ''; ?>" value="<?= $data['allPrix']; ?>">
-                    <span class="invalid-feedback"><?= $data['error_allPrix'] ?></span>
                 </div>
                 <div class="form-group mb-4">
                     <label for="remise">Remise*</label>

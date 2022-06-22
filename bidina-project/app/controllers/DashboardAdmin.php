@@ -7,16 +7,7 @@ class DashboardAdmin extends Controller
     {
         $this->userModel = $this->model('User');
         $this->prodModel = $this->model('Products');
-
-    // creat condition check if admin is loggedin 
-    // if not redirect to login page
-    // if (isset($_SESSION['admin_id'])) {
-    //     if ($_SESSION['admin_id'] == 0) {
-    //         redirect('dashboardAdmin/signin');
-    //     }
-    // } else {
-    //     redirect('dashboardAdmin/signin');
-    // }
+        $this->commandModel=$this->model('Command');
     
     }
 
@@ -67,10 +58,7 @@ class DashboardAdmin extends Controller
 
     public function command()
     {
-        $data = [
-            'titre' => '',
-        ];
-
+        $data = $this->commandModel->getAllCommand();
         $this->view('dashboardAdmin/command', $data);
     }
     

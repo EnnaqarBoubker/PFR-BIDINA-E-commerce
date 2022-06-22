@@ -43,24 +43,17 @@ class DashAdmProd extends Controller
         'titre' => trim(htmlspecialchars($_POST['titre'])),
         'sold' => trim(htmlspecialchars($_POST['sold'])),
         'allPrix' => trim(htmlspecialchars($_POST['allPrix'])),
-        'remise' => trim(htmlspecialchars($_POST['remise'])),
-        'new' => trim(htmlspecialchars($_POST['new'])),
-        'categoris' => trim(htmlspecialchars($_POST['categoris'])),
-        'img' => ($_FILES['img']['name']),
-        // 'prod_id' => $_SESSION['id_product'],
+        'img' => $_FILES['img']['name'],
         'error_titre' => '',
         'error_sold' => '',
         'error_allPrix' => '',
-        'error_categoris' => '',
 
       ];
     
-
-
-      $terget = dirname(APPROOT) . "/public/img/imgProducts/" . $_FILES['img']['name'];
+      $terget = dirname(APPROOT) . "/public/img/imgProducts/" . $data['img'];
       move_uploaded_file($_FILES['img']['tmp_name'], $terget);
 
-      
+      // die(var_dump($_FILES['img']['tmp_name']));
 
       $validationPrix = "/^\d{0,8}(\.\d{1,4})?$/";
       $validationTitre =  "/^[a-zA-Z' ]*$/";
@@ -107,8 +100,6 @@ class DashAdmProd extends Controller
         'titre' => '',
         'sold' => '',
         'allPrix' => '',
-        'remise' => '',
-        'new' => '',
         'error_titre' => '',
         'error_sold' => '',
         'error_allPrix' => '',
@@ -152,10 +143,6 @@ class DashAdmProd extends Controller
         'titre' => trim(htmlspecialchars($_POST['titre'])),
         'sold' => trim(htmlspecialchars($_POST['sold'])),
         'allPrix' => trim(htmlspecialchars($_POST['allPrix'])),
-        'categoris' => trim(htmlspecialchars($_POST['categoris'])),
-        'remise' => trim(htmlspecialchars($_POST['remise'])),
-        'new' => trim(htmlspecialchars($_POST['new'])),
-        'img' => $_SESSION['img'],
         'error_titre' => '',
         'error_sold' => '',
         'error_allPrix' => '',
@@ -181,10 +168,6 @@ class DashAdmProd extends Controller
           'titre' => '',
           'sold' => '',
           'allPrix' => '',
-          'remise' => '',
-          'new' => '',
-          'img' => '',
-          'categoris' => '',
           'error_titre' => '',
           'error_sold' => '',
           'error_allPrix' => '',

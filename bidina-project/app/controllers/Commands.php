@@ -6,7 +6,6 @@ class Commands extends Controller{
     {
        $this->commandModel = $this->model('Command');
        $this->panierModel = $this->model('Panier');
-       $this->prodModel = $this->model('Products');
     }
 
 
@@ -15,18 +14,9 @@ class Commands extends Controller{
     public function insertCommand()
     {
         $id_user = $_SESSION['user_id'];
-
-        @$paniers = $this->panierModel->getCountQuantityProdInPanier($id_user);
-        
         $this->commandModel->insertCommand($id_user);
         $this->deleteAllProdFromPanier($id_user);
-
-
-        $data = [
-            'paniers' => $paniers,
-        ];
-        
-        $this->view('pages/command', $data);
+        $this->view('pages/command');
     }
 
 
@@ -34,19 +24,12 @@ class Commands extends Controller{
     public function deleteAllProdFromPanier()
     {
         $id_user = $_SESSION['user_id'];
-        $products = $this->prodModel->affichageProductLimit();
-        @$paniers = $this->panierModel->getCountQuantityProdInPanier($id_user);
-
         $this->panierModel->deleteAllProdFromPanier($id_user);
-        
-
-        $data = [
-            'paniers' => $paniers,
-            'products' => $products,
-        ];
-        $this->view('pages/command',$data);
+        $this->view('pages/command');
 
     }
+
+    
     
 
 }
