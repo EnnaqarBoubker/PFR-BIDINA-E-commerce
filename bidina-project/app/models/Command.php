@@ -37,4 +37,14 @@ class Command
     }
 
 
+    //creat methode count all command
+    public function countAllCommand()
+    {
+        $sql = "SELECT COUNT(*) AS command FROM command";
+        $this->db->query($sql);
+        $result = $this->db->resultSet();
+        return $result[0]->command;
+    }
+
+
 }

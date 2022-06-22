@@ -16,16 +16,12 @@ class Profile extends Controller
   {
 
     $posts = $this -> userModel -> findUserByEmailAndReturnUserData($_SESSION['user_email']);
-    @$paniers = $this->panierModel->getCountQuantityProdInPanier($_SESSION['user_id']);
-
+    $paniers = $this->panierModel->getCountQuantityProdInPanier($_SESSION['user_id']);
 
     $data = [
-      'title' => 'formulaire Edite product',
       'posts' => $posts,
       'paniers' => $paniers,
     ];
-
-
     $this->view('profile/profile', $data);
   }
 

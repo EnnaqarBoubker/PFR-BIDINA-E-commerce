@@ -12,7 +12,7 @@
                         <img src="<?= URLROOT; ?>/img/image-2/3519275.jpg" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                         <!-- $$$$$$$$$$$$$$$$$$$$$$$$$  -->
                         <?php foreach($data['posts'] as $tab ) :  ?>
-                        <h5 class="my-3 text-capitalize"><?php echo $tab -> firstName . ' ' . $tab -> lastName ; ?></h5>
+                        <h5 class="my-3 text-capitalize"><?php echo $tab -> fullName ?></h5>
                         <p class="text-muted mb-4"><?php echo $tab -> email; ?></p>
                         <div class="d-flex justify-content-center mb-2">
                             
@@ -34,16 +34,7 @@
                                 <p class="mb-0 ">First Name</p>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-muted mb-0 text-capitalize"><?php echo $tab -> firstName ; ?></p>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row p-2">
-                            <div class="col-sm-3">
-                                <p class="mb-0 ">Last Name</p>
-                            </div>
-                            <div class="col-sm-9">
-                                <p class="text-muted mb-0 text-capitalize"><?php echo $tab -> lastName ?></p>
+                                <p class="text-muted mb-0 text-capitalize"><?php echo $tab -> fullName ; ?></p>
                             </div>
                         </div>
                         <hr>
@@ -62,6 +53,15 @@
                             </div>
                             <div class="col-sm-9">
                                 <p class="text-muted mb-0"><?php echo $tab -> phone ?></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row p-2">
+                            <div class="col-sm-3">
+                                <p class="mb-0 ">Adress</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0 text-capitalize"><?php echo $tab -> adress ?></p>
                             </div>
                         </div>
                         <hr>

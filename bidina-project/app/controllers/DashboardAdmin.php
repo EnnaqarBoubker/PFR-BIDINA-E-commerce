@@ -18,11 +18,13 @@ class DashboardAdmin extends Controller
         $products = $this->prodModel->countAllProd();
         $users = $this->userModel->countAllUser();
         $messages = $this->userModel->countAllMessage();
+        $commands = $this->commandModel->countAllCommand();
 
         $data = [
             'products' => $products,
             'users' => $users,
             'messages' => $messages,
+            'commands' => $commands
         ];
 
         $this->view('dashboardAdmin/dashAdm', $data);
@@ -32,10 +34,10 @@ class DashboardAdmin extends Controller
 
     public function dashAdmUse()
     {
-        $posts = $this->userModel->getAllUsers();
+        $users = $this->userModel->getAllUsers();
 
         $data = [
-            'posts' => $posts,
+            'users' => $users,
         ];
 
         $this->view('dashboardAdmin/dashAdmUse', $data);

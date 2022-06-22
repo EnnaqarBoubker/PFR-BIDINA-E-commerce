@@ -35,10 +35,7 @@
                 <?php else : ?>
                     <a class="batin position-relative p-3 border-0 text-light" style="top: 28px; width : 100%;" href="<?= URLROOT; ?>/users/signin">LOG IN TO ADD TO CART</a>
                 <?php endif; ?>
-
-
             </form>
-            <div class="totla" id="total"> <?php //echo ($total*0.2) +$total ?></div>
         </div>
     </div>
 </div>

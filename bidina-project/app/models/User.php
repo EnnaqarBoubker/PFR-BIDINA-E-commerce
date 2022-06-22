@@ -13,9 +13,10 @@ class User
 
     public function getAllUsers()
     {
-        $this -> db -> query('SELECT* FROM users');
+        $sql = "SELECT* FROM users WHERE role NOT IN ('admin')";
+        $this->db->query($sql);
 
-        return $this -> db -> resultSet();
+        return $this->db->resultSet();
     }
 
 
@@ -26,12 +27,12 @@ class User
     public function signup($data)
     {
 
-        $sql = 'INSERT INTO users (firstName, lastName, phone, email, password, confirm_password) VALUES (:firstName, :lastName, :phone, :email, :password, :confirm_password)';
+        $sql = 'INSERT INTO users (`fullName`, `email`, `phone`, `adress`, `password`, `confirm_password`) VALUES (:fullName,:email ,:phone ,:adress , :password, :confirm_password)';
         $this->db->query($sql);
         // bind value
-        $this->db->bind(':firstName', $data['firstName']);
-        $this->db->bind(':lastName', $data['lastName']);
+        $this->db->bind(':fullName', $data['fullName']);
         $this->db->bind(':phone', $data['phone']);
+        $this->db->bind(':adress', $data['adress']);
         $this->db->bind(':email', $data['email']);
         $this->db->bind(':password', $data['password']);
         $this->db->bind(':confirm_password', $data['confirm_password']);
@@ -53,7 +54,7 @@ class User
 
         $row = $this->db->single();
 
-        
+
         if ($row->password) {
             return $row;
         } else {
@@ -76,17 +77,17 @@ class User
             return false;
         }
     }
-      // find user by id    
-      public function gitUserById($id)
-      {
-          $sql = "SELECT * FROM users WHERE id = :id";
-          $this->db->query($sql);
-          $this->db->bind(':id', $id);
-  
-          $row = $this->db->single();
-  
-          return $row;
-      }
+    // find user by id    
+    public function gitUserById($id)
+    {
+        $sql = "SELECT * FROM users WHERE id = :id";
+        $this->db->query($sql);
+        $this->db->bind(':id', $id);
+
+        $row = $this->db->single();
+
+        return $row;
+    }
 
 
 
@@ -110,28 +111,19 @@ class User
 
     public function editeProfile($data, $id)
     {
-        $sql = "UPDATE users SET firstName = :firstName ,lastName = :lastName ,email = :email ,phone = :phone WHERE id = '$id'";
+        $sql = "UPDATE users SET fullName = :fullName ,email = :email  ,phone = :phone, adress = :adress WHERE id = '$id'";
         $this->db->query($sql);
-        $this -> db -> bind(':firstName', $data['firstName']);
-        $this -> db -> bind(':lastName', $data['lastName']);
-        $this -> db -> bind(':email', $data['email']);
-        $this -> db -> bind(':phone', $data['phone']);
+        $this->db->bind(':fullName', $data['fullName']);
+        $this->db->bind(':email', $data['email']);
+        $this->db->bind(':phone', $data['phone']);
+        $this->db->bind(':adress', $data['adress']);
 
         //Execute function
-        if ($this -> db-> execute()) {
+        if ($this->db->execute()) {
             return true;
         } else {
             return false;
         }
-    }
-
-    // creat function get count all product
-    public function countAllUser()
-    {
-        $sql = "SELECT COUNT(*) AS user FROM users";
-        $this->db->query($sql);
-        $result = $this->db->resultSet();
-        return $result[0]->user;
     }
 
     //creat function contact us
@@ -160,6 +152,18 @@ class User
         $result = $this->db->resultSet();
         return $result;
     }
+
+
+    // creat function get count all product
+    public function countAllUser()
+    {
+        $sql = "SELECT COUNT(*) AS user FROM users WHERE role NOT IN ('admin')";
+        $this->db->query($sql);
+        $result = $this->db->resultSet();
+        return $result[0]->user;
+    }
+
+
     //creat methode count all message
     public function countAllMessage()
     {

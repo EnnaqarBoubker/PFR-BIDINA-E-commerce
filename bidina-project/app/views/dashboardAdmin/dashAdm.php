@@ -55,7 +55,7 @@ if($_SESSION['user_role'] == 'admin'){
                                         <h5 class="pt-3">Commands</h5>
                                     </div>
                                     <div class="categ-rr">
-                                        <h6 class="float-end fs-4">4</h6>
+                                        <h6 class="float-end fs-4"><?php echo $data['commands']?></h6>
                                     </div>
                                 </div>
                             </div>

@@ -14,7 +14,7 @@ class ProductDet extends Controller
   {
     
     $products = $this->prodModel->getprodById($id);
-    @$paniers = $this->panierModel->getCountQuantityProdInPanier($_SESSION['user_id']);
+    $paniers = $this->panierModel->getCountQuantityProdInPanier($_SESSION['user_id']);
 
     $data = [
       'products' => $products,

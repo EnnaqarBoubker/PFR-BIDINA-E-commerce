@@ -14,16 +14,16 @@ class Users extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // process form
             $data = [
-                'firstName' => trim(htmlspecialchars($_POST['firstName'])),
-                'lastName' => trim(htmlspecialchars($_POST['lastName'])),
+                'fullName' => trim(htmlspecialchars($_POST['fullName'])),
                 'email' => trim(htmlspecialchars($_POST['email'])),
                 'phone' => trim(htmlspecialchars($_POST['phone'])),
+                'adress' => trim(htmlspecialchars($_POST['adress'])),
                 'password' => trim(htmlspecialchars($_POST['password'])),
                 'confirm_password' => trim(htmlspecialchars($_POST['confirm_password'])),
-                'firstName_err' => '',
-                'lastName_err' => '',
+                'fullName_err' => '',
                 'email_err' => '',
                 'phone_err' => '',
+                'adress_err' => '',
                 'password_err' => '',
                 'confirm_password_err' => ''
             ];
@@ -37,17 +37,10 @@ class Users extends Controller
             $emailValidation = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
 
             // validate first name input
-            if (empty($data['firstName'])) {
-                $data['firstName_err'] = 'Enter your First Name';
-            } elseif (!preg_match($nameValidation, $data['firstName'])) {
-                $data['firstName_err'] = 'First Name can only contain letters .';
-            }
-
-            // validate last name input
-            if (empty($data['lastName'])) {
-                $data['lastName_err'] = 'Enter your Last Name';
-            } elseif (!preg_match($nameValidation, $data['lastName'])) {
-                $data['lastName_err'] = 'Last Name can only contain letters .';
+            if (empty($data['fullName'])) {
+                $data['fullName_err'] = 'Enter your First Name';
+            } elseif (!preg_match($nameValidation, $data['fullName'])) {
+                $data['fullName_err'] = 'First Name can only contain letters .';
             }
 
             // validate email input
@@ -69,6 +62,13 @@ class Users extends Controller
                 $data['phone_err'] = 'Phone can only contain letters .';
             }
 
+            // validate adress input
+            if (empty($data['adress'])) {
+                $data['adress_err'] = 'Enter your adress';
+            } elseif (!preg_match($nameValidation, $data['adress'])) {
+                $data['adress_err'] = 'adress can only contain letters .';
+            }
+
             // validate password input
             if (empty($data['password'])) {
                 $data['password_err'] = 'Enter your password';
@@ -85,7 +85,7 @@ class Users extends Controller
                 }
             }
             // Make sure errors are empty
-            if (empty($data['firstName_err']) && empty($data['lastName_err']) && empty($data['email_err']) && empty($data['phone_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])) {
+            if (empty($data['fullName_err']) && empty($data['email_err']) && empty($data['phone_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])) {
 
                 // creat count signup
                 if ($this->userModel->signup($data)) {
@@ -102,16 +102,16 @@ class Users extends Controller
             // echo 'load form';
             // init data
             $data = [
-                'firstName' => '',
-                'lastName' => '',
+                'fullName' => '',
                 'email' => '',
                 'phone' => '',
+                'adress' => '',
                 'password' => '',
                 'confirm_password' => '',
-                'firstName_err' => '',
-                'lastName_err' => '',
+                'fullName_err' => '',
                 'email_err' => '',
                 'phone_err' => '',
+                'adress_err' => '',
                 'password_err' => '',
                 'confirm_password_err' => ''
             ];
@@ -197,7 +197,7 @@ class Users extends Controller
     public function creatSessionUser($user)
     {
         $_SESSION['user_id'] = $user->id; // the id came from model
-        $_SESSION['user_firstName'] = $user->firstName;
+        $_SESSION['user_fullName'] = $user->fullName;
         $_SESSION['user_lastName'] = $user->lastName;
         $_SESSION['user_fullName'] = $user->fullName;
         $_SESSION['user_email'] = $user->email;
