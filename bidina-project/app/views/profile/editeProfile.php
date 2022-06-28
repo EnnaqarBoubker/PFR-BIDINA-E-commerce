@@ -2,7 +2,7 @@
 <main>
     <div class=" card border-0 p-4 m-5 col-lg-5 col-md-6 col-sm-7 mx-auto">
         <div class="signin-a card-body row">
-            <form action="<?= URLROOT; ?>/profile/editeProfile/<?= $data['id'] ?>" method="POST">
+            <form action="<?= URLROOT; ?>/profile/editeProfile/<?= $data['id'] ?>" method="POST" onsubmit="validate()">
                 <div class="mb-3">
                     <label for="fullName" class="form-label ">Full Name <span class="text-danger fs-5">*</span></label>
                     <input type="text" id="name" name="fullName" placeholder="Enter Full Name" class="form-control" value="<?php echo $data['fullName']; ?>">
@@ -38,5 +38,5 @@
         </div>
     </div>
 </main>
-<script src="<?= URLROOT; ?>/js/main.js"></script>
+<!-- <script src="<?= URLROOT; ?>/js/main.js"></script> -->
 <?php require_once APPROOT . "/views/inc/footerDash.php" ?>

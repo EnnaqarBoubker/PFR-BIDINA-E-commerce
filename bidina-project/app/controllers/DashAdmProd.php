@@ -85,11 +85,12 @@ class DashAdmProd extends Controller
         $data['error_allPrix'] = 'All Pris can only be more than a sold';
       }
 
-
+      
       // Make sure errors are empty
       if (empty($data['error_titre']) && empty($data['error_sold']) && empty($data['error_allPrix'])) {
         // function add Product
         if ($this->prodModel->addProduct($data)) {
+          // $data['date_Prod']
           redirect('dashAdmProd/dashProd');
         } else {
           die('something went wonrg');
@@ -204,7 +205,12 @@ class DashAdmProd extends Controller
     }
   }
 
+// creat function session
 
+public function creatSessionProd($produit)
+{
+  $_SESSION['date_Prod'] = $produit-> date_Prod;
+}
 
 
 

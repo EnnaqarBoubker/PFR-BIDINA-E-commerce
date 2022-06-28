@@ -9,9 +9,10 @@ const adress_err = document.getElementById("adress_err");
 
 const submit = document.getElementById("submit");
 
-submit.addEventListener('click', (e) => {
+submit.addEventListener('submit', (e) => {
     e.preventDefault();
     validate();
+   
 });
  
 function validate(){
@@ -55,4 +56,12 @@ function validate(){
         adress.setAttribute("style", "color:black; border: 1px green solid ;");
         adress_err.innerText = "";
     }
+
+}
+
+if(validate()){
+    return true;
+}
+else{
+    return false;
 }

@@ -59,6 +59,7 @@ class Products {
         $this -> db -> bind(':allPrix', $data['allPrix']);
         $this -> db -> bind(':categoris', $data['categoris']);
         $this -> db -> bind(':img', $data['img']);
+    
 
         //Execute function
         if ($this -> db-> execute()) {

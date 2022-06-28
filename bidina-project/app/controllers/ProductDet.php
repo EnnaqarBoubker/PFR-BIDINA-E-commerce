@@ -13,8 +13,8 @@ class ProductDet extends Controller
   public function productDet($id)
   {
     
-    $products = $this->prodModel->getprodById($id);
-    $paniers = $this->panierModel->getCountQuantityProdInPanier($_SESSION['user_id']);
+    @$products = $this->prodModel->getprodById($id);
+    @$paniers = $this->panierModel->getCountQuantityProdInPanier($_SESSION['user_id']);
 
     $data = [
       'products' => $products,
